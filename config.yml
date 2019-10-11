@@ -1,0 +1,65 @@
+baseURL: https://dev--oamio.netlify.com/
+languageCode: en-us
+title: OAM | Open Application Model Specification
+theme: clean-landing
+
+disableKinds:
+ -taxonomy
+ -taxonomyTerm
+
+params:
+  openGraph: true
+  gitrepo: https://github.com/microsoft/hydra-spec/
+  description: Open Application Model Specification
+  navbarlogo:
+  # Logo (from static/images/logos/___)
+   image: logos/temp-logo.svg
+   link: https://oam.dev/
+  font:
+    name: "Work Sans"
+    sizes: [400,600]
+  hero:
+    # Main hero title
+    title: oam
+    # Hero subtitle (optional)
+    subtitle: Open Application Model Specification
+    # Button text
+    buttontext: View Spec
+    # Where the main hero button links to
+    buttonlink: "#"
+  # Customizable navbar. For a dropdown, add a "sublinks" list.
+  sidebarlogo:
+   image: logos/oam.svg
+   link: https://oam.dev/
+  sidebarIcon:
+   image: ohm.svg
+   link: https://oam.dev/
+  sidebar:
+  - title: Overview
+    url: /#overview
+  - title: The Spec
+    url: /#spec
+  - title: Examples
+    url: /#rudr
+  - title: Github
+    url: https://github.com/microsoft/hydra-spec/
+  navbar:
+  - title: Home
+    url: /#
+  - title: About
+    url: /#about
+  - title: Download
+  - title: Docs
+    url: /#docs
+  - title: Community
+    url: /#community
+  footer:
+    logo: strapline.svg
+    # Social media links (GitHub, Twitter, etc.). All are optional.
+    socialmedia:
+    - link: https://twitter.com/oamdev
+      icon: twitter
+    - link: /#
+      icon: slack
+    - link: https://github.com/microsofft/oam-spec
+      icon: github

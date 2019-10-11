@@ -1,0 +1,245 @@
+/* ==========================================================================
+Main SCSS file / Fresh
+========================================================================== */
+
+//Imports
+@import 'partials/colors';
+@import 'partials/navbar';
+// @import 'partials/dropdowns';
+@import 'partials/sections';
+@import 'partials/hero';
+@import 'partials/footer';
+@import 'partials/buttons';
+@import 'partials/cards';
+// @import 'partials/forms';
+@import 'partials/animations';
+// @import 'partials/sidebar';
+@import 'partials/testimonials';
+@import 'partials/responsive';
+@import 'partials/utils';
+
+html,
+body {
+  min-height: 100vh;
+  background: $shade0;
+  margin: 0;
+  padding: 0;
+}
+
+.page-wrapper {
+  margin-bottom: 0 !important;
+}
+
+body {
+  font-family: 'Work Sans', sans-serif !important;
+  background: $shade0 !important;
+  font-size: 18px;
+  line-height: 1.75;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-wrapper {
+  min-height: 100vh;
+  background: white;
+  min-width: 300px;
+  width: 15vw;
+
+   a {
+    @include transition;
+   }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    @include box-shadow;
+
+    .sidebar-header {
+      img, svg {
+        position: fixed;
+        top: 3rem;
+        left: 2.35rem;
+        width: 15vw;
+        max-height: 300px !important;
+        max-width: 25vw !important;
+      }
+    }
+
+    ul {
+      margin: 15vw 0 0 0;
+      padding: 0;
+      
+      li {
+        a {
+          font-size: 1.5rem;
+          color: $charcoal;
+          display: inline-block;
+          min-width: 288px;
+          padding: 0.75rem 2.25rem;
+          @include ripple;
+
+          &:hover {
+            color: $brand;
+            background-color: lighten($shade0, 5%);
+          }
+        }
+      }
+    }
+
+    .sidebar-footer {
+      img, svg {
+        position: fixed;
+        bottom: 3rem;
+        left: 2.35rem;
+        width: 5vw;
+        max-height: 200px !important;
+        max-width: 5vw !important;
+      }
+    }
+  }
+}
+
+.section,
+.section-feature-grey {
+  background-color: transparent;
+}
+
+.content-wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+
+  p {
+    margin: 1.5rem 0;
+    padding-right: 5%;
+    line-height: 1.7;
+  }
+}
+
+.subtitle {
+  h4 {
+    font-size: 1.125rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: $brand;
+    font-weight: 600;
+    position: relative;
+    display: inline-block;
+    margin: 0 auto;
+
+    &:after {
+      position: absolute;
+      background: $purple;
+      left: -10%;
+      right: -10%;
+      bottom: -0.15em;
+      // width: 100%;
+      height: .67em;
+      display: block;
+      content: " ";
+      opacity: 0.13;
+      border-radius: 0.5em;
+    }
+  }
+}
+
+.rudr-cta {
+  background: rgba(255,255,255,0.25);
+  padding: 1rem 0;
+  border-radius: 2rem;
+  text-align: center;
+  margin: 2.5rem auto;
+}
+
+#overviw {
+  h1 {
+
+  }
+}
+
+#oldvnew {
+  background: linear-gradient(180deg, darken($shadel, 3%) 0%, $shade0 100%);
+  border-top: 2px solid rgba(255,255,255,0.35);
+  min-height: 15rem;
+  padding-top: 4rem;
+  padding-bottom: 0;
+
+  .content-wrapper {
+    max-width: 92%;
+  }
+
+  h3 {
+    font-size: 0.925rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: $brand;
+    margin-top: 1rem;
+  }
+
+  h2 {
+    font-size: 1.55rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+  }
+
+  .box {
+    padding-left: 2.5rem;
+  }
+
+  .oldway {
+    border: 2px dashed rgba(255,255,255,0.5);
+    background: transparent;
+    outline: none;
+    box-shadow: none;
+  }
+
+  .newway {
+
+  }
+
+  ol {
+    padding-right: 5%;
+    list-style-position: outside;
+    padding-left: 1rem;
+    color: $primary;
+
+    li {
+      margin: 1.5rem 0;
+      padding-right: 5%;
+      line-height: 1.55;
+      color: darken($charcoal, 10%);
+    }
+  }
+
+  img {
+    margin: 5rem auto -3rem;
+  }
+}
+
+#examples {
+  background: linear-gradient(180deg, darken($shadel, 3%) 0%, $shade0 100%);
+  border-top: 2px solid rgba(255,255,255,0.35);
+
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+
+  .content-wrapper {
+    max-width: 92%;
+  }
+
+  .box {
+    padding: 1.5rem 2rem;
+    
+    h2 {
+      color: $brand;
+      font-weight: 600;
+      margin: 0.5rem 0;
+    }
+
+    h4 {
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-size: 0.825rem;
+    }
+  }
+}
