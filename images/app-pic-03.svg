@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="368px" height="136px" viewBox="0 0 368 136" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>illustration 03</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0.27734375" width="425" height="113.722656"></rect>
+        <linearGradient x1="68.4052709%" y1="105.018943%" x2="54.8527252%" y2="27.2488985%" id="linearGradient-3">
+            <stop stop-color="#60A2E0" offset="0%"></stop>
+            <stop stop-color="#DEE8F6" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="mockup-website]" transform="translate(-394.000000, -696.000000)">
+            <g id="illustration-03" transform="translate(324.000000, 696.000000)">
+                <g id="Group-3" transform="translate(219.000000, 68.000000) scale(1, -1) translate(-219.000000, -68.000000) ">
+                    <g id="Group-2" opacity="0.635435268" transform="translate(0.000000, 7.000000)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <g id="Rectangle-6" fill-rule="nonzero"></g>
+                        <ellipse id="Oval-3" fill="url(#linearGradient-3)" fill-rule="nonzero" mask="url(#mask-2)" cx="306.5" cy="115.294922" rx="191.5" ry="139.705078"></ellipse>
+                        <rect id="Rectangle-14" stroke="#D0C6E6" stroke-width="6" fill-rule="nonzero" mask="url(#mask-2)" x="193.652344" y="10.3789062" width="154" height="114" rx="10"></rect>
+                    </g>
+                    <path d="M247.785156,33.9726562 L296.615234,65.9257812 L347.664062,33.9726562" id="Path-4" stroke="#9D8BC4" stroke-width="3" stroke-linecap="round" stroke-dasharray="4,10" fill-rule="nonzero"></path>
+                    <path d="M296.863281,116.5 L296.863281,21.6640625" id="Path-5" stroke="#9D8BC4" stroke-width="3" stroke-linecap="round" stroke-dasharray="5,8" fill-rule="nonzero"></path>
+                    <rect id="Rectangle-13" fill="#6EC1EB" fill-rule="nonzero" x="214" y="71" width="175" height="27" rx="8"></rect>
+                    <rect id="Rectangle-8" stroke="#7FD4F4" stroke-width="4" fill="#FFFFFF" fill-rule="nonzero" x="229" y="2" width="36" height="36" rx="5"></rect>
+                    <rect id="Rectangle-8" stroke="#7FD4F4" stroke-width="4" fill="#FFFFFF" fill-rule="nonzero" x="279" y="2" width="36" height="36" rx="5"></rect>
+                    <rect id="Rectangle-8" stroke="#7FD4F4" stroke-width="4" fill="#FFFFFF" fill-rule="nonzero" x="329" y="2" width="36" height="36" rx="5"></rect>
+                    <rect id="Rectangle-13" stroke="#1C7BE3" stroke-width="4" fill-rule="nonzero" x="210" y="79" width="171" height="23" rx="8"></rect>
+                    <path d="M81,123.386719 L428.164062,123.386719" id="Path-3" stroke="#2681D6" stroke-width="6" fill-rule="nonzero"></path>
+                    <path d="M385.164063,83.386719 L465.164063,83.386719" id="Path-3" stroke="#2681D6" stroke-width="6" fill-rule="nonzero" transform="translate(425.164063, 83.386719) rotate(-270.000000) translate(-425.164063, -83.386719) "></path>
+                    <circle id="Oval-5" stroke="#2681D6" stroke-width="6" fill="#FFFFFF" fill-rule="nonzero" cx="425.652344" cy="35.7460938" r="9"></circle>
+                    <circle id="Oval-5" stroke="#2681D6" stroke-width="6" fill="#FFFFFF" fill-rule="nonzero" cx="82.6523438" cy="123.386719" r="9"></circle>
+                </g>
+                <rect id="Rectangle-7" stroke="#60A2E0" fill="#FFFFFF" fill-rule="nonzero" x="112.152344" y="30.8867187" width="60" height="24"></rect>
+                <text id="INFRA" font-family="SpaceMono-Regular, Space Mono" font-size="16" font-weight="normal" fill="#60A2E0">
+                    <tspan x="117.652344" y="48.3867187">INFRA</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>
