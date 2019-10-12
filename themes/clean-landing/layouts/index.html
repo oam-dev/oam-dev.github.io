@@ -1,0 +1,24 @@
+{{ define "main" }}
+
+<div class="page-wrapper columns is-gapless">
+    <div class="column is-narrow is-gapless sidebar-wrapper">
+        {{ partial "sidebar.html" . }}
+    </div>
+    <div class="column">
+        
+        {{ partial "hero.html" . }}
+
+        {{ partial "oldnew.html" . }}
+
+        {{ partial "rudr.html" . }}
+
+        {{ partial "community.html" . }}
+
+        {{ partial "footer.html" . }}
+
+        <!-- Back To Top Button -->
+        <div id="backtotop"><a href="#"></a></div>
+    </div>
+</div>
+
+{{ end }}

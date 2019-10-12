@@ -1,0 +1,28 @@
+{{- $footer      := .Site.Params.footer }}
+{{- $logo        := index $footer "logo" }}
+{{- $quickLinks  := index $footer "quicklinks" }}
+{{- $socialMedia := index $footer "socialmedia" }}
+{{- $bulmaLogo   := index $footer "bulmalogo" }}
+<footer class="footer">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-half">
+        <div class="footer-logo">
+          <img src="{{ printf "/images/logos/%s" $logo | relURL }}">
+        </div>
+      </div>
+      <div class="column is-half">
+        <div class="content has-text-right">
+            <p>
+              {{- range $socialMedia }}
+              <a class="" href="{{ .link }}">
+                <span class="icon"><i class="fa fa-{{ .icon }}"></i></span> {{humanize .icon }}
+              </a>
+              {{- end }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
