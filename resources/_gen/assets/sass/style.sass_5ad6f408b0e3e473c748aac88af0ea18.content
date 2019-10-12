@@ -6905,7 +6905,7 @@ body {
       position: fixed;
       top: 3rem;
       left: 2.35rem;
-      width: 15vw;
+      width: 17.5vw;
       max-height: 300px !important;
       max-width: 25vw !important; }
     .sidebar-wrapper .sidebar ul {
@@ -6915,12 +6915,13 @@ body {
         font-size: 1.5rem;
         color: #4F6579;
         display: inline-block;
-        min-width: 288px;
+        min-width: 300px;
         padding: 0.75rem 2.25rem;
         position: relative;
         display: inline-block;
         text-align: center;
-        transition: all 0.3s ease-in-out; }
+        transition: all 0.3s ease-in-out;
+        text-align: left; }
         .sidebar-wrapper .sidebar ul li a::after {
           position: absolute;
           bottom: -4px;
@@ -6944,7 +6945,7 @@ body {
       position: fixed;
       bottom: 3rem;
       left: 2.35rem;
-      width: 5vw;
+      width: 3.333vw;
       max-height: 200px !important;
       max-width: 5vw !important; }
 
@@ -7043,5 +7044,18 @@ body {
       text-transform: uppercase;
       letter-spacing: 0.2em;
       font-size: 0.825rem; }
+
+#community dl dt, #community dl dd {
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: 0.5rem; }
+
+#community dl dt {
+  font-weight: bold;
+  display: inline-block;
+  width: 35%; }
+
+#community dl dd {
+  width: 60%; }
 
 /*# sourceMappingURL=style.css.map */
