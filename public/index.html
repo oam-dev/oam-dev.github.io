@@ -10,7 +10,7 @@
     
 <link rel="icon" type="image/png" href="https://dev--oamio.netlify.com/images/favicon.png" />
 <link href="https://fonts.googleapis.com/css?family=Work&#43;Sans:400,600" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="/css/style.min.3b5963dc5f1e9e29b281958490614bc06683d2b790390838765c663a7ed9d360.css" integrity="sha256-O1lj3F8enimygZWEkGFLwGaD0reQOQg4dlxmOn7Z02A=">
+<link rel="stylesheet" type="text/css" href="/css/style.min.21f88472e050eed9a33b5f626d9a386261a19e2b808eaf85b33276972b69efb2.css" integrity="sha256-IfiEcuBQ7tmjO19ibZo4YmGhniuAjq&#43;FszJ2lytp77I=">
 <link rel="stylesheet" type="text/css" href="https://dev--oamio.netlify.com/css/icons.css">
 
   </head>
@@ -23,7 +23,7 @@
     
 
 <div class="page-wrapper columns is-gapless">
-    <div class="column is-narrow sidebar-wrapper">
+    <div class="column is-narrow is-gapless sidebar-wrapper">
         
 <div class="sidebar">
   <div class="sidebar-header">
@@ -96,9 +96,7 @@
       <div class="column is-full">
           <div class="button-cta has-text-centered">
             <a class="button is-primary is-large" href="https://github.com/microsoft/hydra-spec">Read the Spec</a>
-            <p class="rudr-cta">Check out <a href="https://github.com/microsoft/scylla"><strong>Rudr</strong></a> for a Kubernetes implementation of the specification. 
-              
-            &darr;
+            <p class="rudr-cta">Check out <a href="https://github.com/microsoft/scylla"><strong>Rudr</strong></a> for a Kubernetes implementation of the specification. &darr;</p>
           </div>
       </div>
     </div>
@@ -143,7 +141,16 @@
 
         </div>
 
-        <img src="platform.png" />
+        <div class="column has-text-centered is-three-fifths is-offset-one-fifth">
+          <img src="images/platforms.jpg" />
+        </div>
+
+        <p class="rudr-cta">OAM is <em>platform-agnostic</em>. Read the <a href="https://github.com/microsoft/hydra-spec/blob/master/introduction.md">Intro</a> doc for more background and user stories.</p>
+
+
+
+
+        
 
       </div>
     </div>
@@ -151,34 +158,41 @@
 </section>
 
         
-<section class="section is-medium" id="about">
+<section class="section is-medium" id="examples">
   <div class="content-wrapper">
     
     <div class="subtitle has-text-centered">
       <h4>Examples</h4>
     </div>
+
+    <br><br><br>
     
-    <div class="container">
+    <div class="columns">
+      <div class="column is-two-thirds">
         
-      <div class="content-wrapper">
-        <div class="columns">
-
-
+        <div class="box">
+          <h2 class="title">Rudr</h2>
+          <h4>OAM for Kubernetes</h4>
           <hr>
 
-          
-          
-          <h3 class="title is-6">Rudr info coming...</h3>
+          <p>Rudr takes an incremental approach to solving problems. The architecture is a set of plugins for Kubernetes which allow OAM specifications to be implemented and deployed on clusters with native APIs <em>(you still use kubectl)</em>.</p>
 
+          <p>This allows app developers to focus on building OAM components, app operators to focus on operational capabilities through the OAM app config and infra operators to focus on Kubernetes. By leveraging the Open App Model, users now have a framework to define their apps on their Kubernetes clusters.</p>
+
+          <p>Currently, Rudr will leverage the defined trait to accomplish the task. This gives the freedom to use whatever underlying tool the user wants while providing a trait that focuses on the functionality and not the technology. In the future, Rudr might provide a set of default technologies to provide the functionality desired by a trait.</p>
+        </div>
+      </div>
+
+      <div class="column is one-third">
+        <div class="box">
+          Lorem
+        </div>
+
+        <div class="box">
+          Ipsum
           
         </div>
 
-        <div class="columns">
-          <div class="column is-half">
-
-           
-          </div>
-        </div>
 
       </div>
     </div>
@@ -187,31 +201,53 @@
 
         <section class="section is-medium" id="community">
   <div class="content-wrapper">
-    <div class="container">
 
-      <div class="subtitle has-text-centered">
-        <h4>Contibutor Community</h4>
-      </div>
+    <div class="subtitle has-text-centered">
+      <h4>Dev Community</h4>
+    </div>
 
-      <div class="content-wrapper">
-        
-        <div class="columns has-text-centered">
-          <div class="column is-two-thirds">
+    <div class="content-wrapper">
+      
+      <div class="columns">
+        <div class="column is-two-fifths">
 
-              <div class="level">
-                <div class="level-item"><img src="https://dummyimage.com/90x90/ccc/fff&text=logo"></div>
-                <div class="level-item"><img src="https://dummyimage.com/130x60/ccc/fff"></div>
-                <div class="level-item"><img src="https://dummyimage.com/100x65/ccc/fff&text=logo"></div>
-                <div class="level-item"><img src="https://dummyimage.com/75x90/ccc/fff&text=logo"></div>
-              </div>
+          <p>We welcome any new contributors. Join a slack channel, a weekly call or submit a PR!</p>
+
+          <br><br>
+
+          <div class="level">
+            <div class="level-item"><img src="https://dummyimage.com/90x90/ccc/fff&text=logo"></div>
+            <div class="level-item"><img src="https://dummyimage.com/130x60/ccc/fff"></div>
           </div>
-          
-          <div class="column is-one-third has-text-left">
-            <p>Chat with us in Slack or join the weekly developer call to discuss and contribute to the project.</p>
+          <div class="level">
+            <div class="level-item"><img src="https://dummyimage.com/100x65/ccc/fff&text=logo"></div>
+            <div class="level-item"><img src="https://dummyimage.com/75x90/ccc/fff&text=you!"></div>
           </div>
+
+
         </div>
+        
+        <div class="column is-three-fifths">
 
+
+          <dl class="box">
+            <dt>Mailing List</dt>
+            <dd><em>TBD</em></dd>
+            <dt>Dev Meetings</dt>
+            <dd>Bi-weekly (Starting Sept 24th), Tuesdays 10:30AM PST.
+              <br>
+              <a href="https://zoom.us/j/623691799?pwd=ZWc4SHFNdWpRUVVNYkdJWE9zVHpjZz09">Zoom invite URL</a> | <a href="https://docs.google.com/document/d/1nqdFEyULekyksFHtFvgvFAYE-0AMHKoS3RMnaKsarjs/edit?usp=sharing">Meeting notes</a>
+            </dd>
+            <dt>Meeting invite</dt>
+            <dd><a href="https://zoom.us/j/623691799?pwd=ZWc4SHFNdWpRUVVNYkdJWE9zVHpjZz09">zoom.us/j/623691799</a></dd>
+            <dt>Meeting notes</dt>
+            <dd><a href="https://docs.google.com/document/d/1nqdFEyULekyksFHtFvgvFAYE-0AMHKoS3RMnaKsarjs/edit?usp=sharing">Notes doc</a></dd>
+            <dt>Slack Channel</dt>
+            <dd>TBD</dd>
+          </dt>
+        </div>
       </div>
+
     </div>
   </div>
 </section>
