@@ -6354,7 +6354,8 @@ footer {
   padding: 0 1.5rem 2rem;
   background: transparent; }
   footer .footer-logo img {
-    max-width: 20vw; }
+    max-width: 20vw;
+    margin-top: 0.35rem; }
   footer a {
     display: inline-block;
     margin-right: 2.5rem; }
@@ -6903,9 +6904,9 @@ body {
     box-shadow: 0 2px 0 rgba(30, 30, 30, 0.25); }
     .sidebar-wrapper .sidebar .sidebar-header img, .sidebar-wrapper .sidebar .sidebar-header svg {
       position: fixed;
-      top: 3rem;
-      left: 2.35rem;
-      width: 17.5vw;
+      top: 2.825rem;
+      left: 3rem;
+      width: 14vw;
       max-height: 300px !important;
       max-width: 25vw !important; }
     .sidebar-wrapper .sidebar ul {
@@ -6916,7 +6917,8 @@ body {
         color: #4F6579;
         display: inline-block;
         min-width: 300px;
-        padding: 0.75rem 2.25rem;
+        font-weight: 400;
+        padding: 0.425rem 3rem;
         position: relative;
         display: inline-block;
         text-align: center;
@@ -6943,8 +6945,8 @@ body {
           background-color: #f0f5fa; }
     .sidebar-wrapper .sidebar .sidebar-footer img, .sidebar-wrapper .sidebar .sidebar-footer svg {
       position: fixed;
-      bottom: 3rem;
-      left: 2.35rem;
+      bottom: 4rem;
+      left: 3rem;
       width: 3.333vw;
       max-height: 200px !important;
       max-width: 5vw !important; }
