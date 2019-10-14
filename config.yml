@@ -30,21 +30,21 @@ params:
   # Customizable navbar. For a dropdown, add a "sublinks" list.
   sidebarlogo:
    image: logos/oam-borderless.svg
-   link: https://oam.dev/
+   link: https://openappmodel.io/
   sidebarIcon:
    image: logos/ohm-borderless.svg
-   link: https://oam.dev/
+   link: https://openappmodel.io/
   sidebar:
+  - title: The Spec
+    url: /#home
   - title: Overview
     url: /#overview
-  - title: The Spec
-    url: https://github.com/microsoft/hydra-spec
   - title: Examples
     url: /#examples
   - title: Implementation
     url: /#rudr
-  - title: Github
-    url: https://github.com/microsoft/hydra-spec/
+  - title: Community
+    url: /#community
   footer:
     logo: strapline.svg
     # Social media links (GitHub, Twitter, etc.). All are optional.
@@ -53,5 +53,5 @@ params:
       icon: twitter
     - link: /#
       icon: slack
-    - link: https://github.com/microsofft/oam-spec
+    - link: https://github.com/microsoft/oam-spec
       icon: github
