@@ -78,6 +78,7 @@ body {
           min-width: 300px;
           font-weight: 400;
           padding: 0.425rem 3rem;
+          letter-spacing: 0.01em;
           @include ripple;
           text-align: left;
 
@@ -115,6 +116,12 @@ body {
     margin: 1.5rem 0;
     padding-right: 5%;
     line-height: 1.7;
+  }
+
+  pre {
+    line-height: 1.4;
+    background-color: lighten($shade0, 6.67%);
+    border-radius: 0.5rem;
   }
 }
 
@@ -173,8 +180,8 @@ body {
   h3 {
     font-size: 0.925rem;
     text-transform: uppercase;
-    letter-spacing: 0.2em;
-    color: $brand;
+    letter-spacing: 0.15em;
+    color: darken($brand, 10%);
     margin-top: 1rem;
   }
 
@@ -190,7 +197,7 @@ body {
 
   .oldway {
     border: 2px dashed rgba(255,255,255,0.5);
-    background: transparent;
+    background: rgba(255,255,255,0.15);
     outline: none;
     box-shadow: none;
   }
@@ -219,11 +226,11 @@ body {
 }
 
 #examples {
-  background: linear-gradient(180deg, darken($shadel, 3%) 0%, $shade0 100%);
+  background: linear-gradient(0deg, darken($shadel, 3%) 0%, $shade0 100%);
   border-top: 2px solid rgba(255,255,255,0.35);
 
   padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding-bottom: 5rem;
 
   .content-wrapper {
     max-width: 92%;
@@ -243,6 +250,36 @@ body {
       letter-spacing: 0.2em;
       font-size: 0.825rem;
     }
+  }
+}
+
+#rudr {
+  background: linear-gradient(180deg, darken(white, 3%) 0%, white 100%);
+  border-top: 2px solid rgba(255,255,255,0.35);
+  padding-top: 3rem;
+
+  img {
+    min-width: 100%;
+    margin-left: -3vw;
+  }
+
+  h1 {
+    font-weight: bold;
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-top: 4.5rem;
+    margin-bottom: 1rem;
+    padding-right: 10%;
+  }
+
+  ul {
+    list-style: disc;
+    margin: 1.5rem 1rem;
+    line-height: 2;
+  }
+
+  .button {
+    padding: 2rem 3rem;
   }
 }
 
