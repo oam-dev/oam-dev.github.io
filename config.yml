@@ -29,10 +29,10 @@ params:
     buttonlink: "#"
   # Customizable navbar. For a dropdown, add a "sublinks" list.
   sidebarlogo:
-   image: logos/oam.svg
+   image: logos/oam-borderless.svg
    link: https://oam.dev/
   sidebarIcon:
-   image: ohm.svg
+   image: logos/ohm-borderless.svg
    link: https://oam.dev/
   sidebar:
   - title: Overview
