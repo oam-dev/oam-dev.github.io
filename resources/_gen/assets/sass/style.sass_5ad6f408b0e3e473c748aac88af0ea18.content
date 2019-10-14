@@ -6333,6 +6333,8 @@ Hero styles
     margin-bottom: 4rem; }
     .hero h1 strong {
       font-weight: 600; }
+  .hero p strong {
+    opacity: 0.8; }
   .hero img {
     margin-left: -1rem; }
   .hero .hero02 img {
@@ -6919,6 +6921,7 @@ body {
         min-width: 300px;
         font-weight: 400;
         padding: 0.425rem 3rem;
+        letter-spacing: 0.01em;
         position: relative;
         display: inline-block;
         text-align: center;
@@ -6962,6 +6965,10 @@ body {
     margin: 1.5rem 0;
     padding-right: 5%;
     line-height: 1.7; }
+  .content-wrapper pre {
+    line-height: 1.4;
+    background-color: #f7f9fc;
+    border-radius: 0.5rem; }
 
 .subtitle h4 {
   font-size: 1.125rem;
@@ -7002,8 +7009,8 @@ body {
   #oldvnew h3 {
     font-size: 0.925rem;
     text-transform: uppercase;
-    letter-spacing: 0.2em;
-    color: #2681D6;
+    letter-spacing: 0.15em;
+    color: #1e67ab;
     margin-top: 1rem; }
   #oldvnew h2 {
     font-size: 1.55rem;
@@ -7013,7 +7020,7 @@ body {
     padding-left: 2.5rem; }
   #oldvnew .oldway {
     border: 2px dashed rgba(255, 255, 255, 0.5);
-    background: transparent;
+    background: rgba(255, 255, 255, 0.15);
     outline: none;
     box-shadow: none; }
   #oldvnew ol {
@@ -7030,10 +7037,10 @@ body {
     margin: 5rem auto -3rem; }
 
 #examples {
-  background: linear-gradient(180deg, #d1dff0 0%, #DDE7F4 100%);
+  background: linear-gradient(0deg, #d1dff0 0%, #DDE7F4 100%);
   border-top: 2px solid rgba(255, 255, 255, 0.35);
   padding-top: 3rem;
-  padding-bottom: 3rem; }
+  padding-bottom: 5rem; }
   #examples .content-wrapper {
     max-width: 92%; }
   #examples .box {
@@ -7046,6 +7053,27 @@ body {
       text-transform: uppercase;
       letter-spacing: 0.2em;
       font-size: 0.825rem; }
+
+#rudr {
+  background: linear-gradient(180deg, #f7f7f7 0%, white 100%);
+  border-top: 2px solid rgba(255, 255, 255, 0.35);
+  padding-top: 3rem; }
+  #rudr img {
+    min-width: 100%;
+    margin-left: -3vw; }
+  #rudr h1 {
+    font-weight: bold;
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-top: 4.5rem;
+    margin-bottom: 1rem;
+    padding-right: 10%; }
+  #rudr ul {
+    list-style: disc;
+    margin: 1.5rem 1rem;
+    line-height: 2; }
+  #rudr .button {
+    padding: 2rem 3rem; }
 
 #community dl dt, #community dl dd {
   display: inline-block;

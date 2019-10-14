@@ -38,21 +38,13 @@ params:
   - title: Overview
     url: /#overview
   - title: The Spec
-    url: /#spec
+    url: https://github.com/microsoft/hydra-spec
   - title: Examples
+    url: /#examples
+  - title: Implementation
     url: /#rudr
   - title: Github
     url: https://github.com/microsoft/hydra-spec/
-  navbar:
-  - title: Home
-    url: /#
-  - title: About
-    url: /#about
-  - title: Download
-  - title: Docs
-    url: /#docs
-  - title: Community
-    url: /#community
   footer:
     logo: strapline.svg
     # Social media links (GitHub, Twitter, etc.). All are optional.

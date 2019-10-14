@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="147px" height="147px" viewBox="0 0 147 147" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>Artboard 3</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <text id="rudr" font-family="Europa-Bold, Europa" font-size="29" font-weight="bold" fill="#344155">
+            <tspan x="48.8195" y="125.625">rudr</tspan>
+        </text>
+        <polygon id="Path-9" stroke="#2681D6" stroke-width="3" fill-rule="nonzero" points="40.4649071 25.9355469 106.535093 25.9355469 106.535093 90.6074219"></polygon>
+        <path d="M103.075195,86.9501953 L45.0224609,86.9501953 L45.0224609,31.2426631" id="Path-10" stroke="#2681D6" stroke-width="3" stroke-dasharray="4" fill-rule="nonzero"></path>
+        <path d="M47.4013672,31.7714844 L105.817383,31.7714844" id="Path-11" stroke="#2681D6" stroke-width="2" opacity="0.5" fill-rule="nonzero"></path>
+    </g>
+</svg>

@@ -1,41 +1,44 @@
 {{- $rudr := .Site.Params.rudr }}
-<section class="section is-medium" id="examples">
+<section class="section is-medium" id="rudr">
   <div class="content-wrapper">
     
     <div class="subtitle has-text-centered">
-      <h4>Examples</h4>
+      <h4>Implementation</h4>
     </div>
 
     <br><br><br>
     
     <div class="columns">
-      <div class="column is-two-thirds">
-        
-        <div class="box">
-          <h2 class="title">Rudr</h2>
-          <h4>OAM for Kubernetes</h4>
-          <hr>
+      <div class="column is-quarter has-text-left"><img src="images/rudr.svg" alt="Rudr" /></div>
+      
+      <div class="column is-three-quarters">
+        <h1>Rudr: A Kubernetes Implementation of the Open Application Model</h1>
+        <small><a href="https://github.com/microsoft/rudr/">github.com/microsoft/scylla</a></small>
+      </div>
+      
+    </div>
 
-          <p>Rudr takes an incremental approach to solving problems. The architecture is a set of plugins for Kubernetes which allow OAM specifications to be implemented and deployed on clusters with native APIs <em>(you still use kubectl)</em>.</p>
+    <div class="columns">
+      <div class="column is-quarter has-text-left">
+        <ul>
+          <li><a>Documentation</a></li>
+          <li><a>Getting Started</a></li>
+          <li><a>Rudr Github Repo</a></li>
+        </ul>
+      </div>
+      <div class="column is-three-quarters">
 
-          <p>This allows app developers to focus on building OAM components, app operators to focus on operational capabilities through the OAM app config and infra operators to focus on Kubernetes. By leveraging the Open App Model, users now have a framework to define their apps on their Kubernetes clusters.</p>
+        <p>Rudr takes an incremental approach to solving problems. The architecture is a set of plugins for Kubernetes which allow OAM specifications to be implemented and deployed on clusters with native APIs <em>(you still use kubectl)</em>.</p>
 
-          <p>Currently, Rudr will leverage the defined trait to accomplish the task. This gives the freedom to use whatever underlying tool the user wants while providing a trait that focuses on the functionality and not the technology. In the future, Rudr might provide a set of default technologies to provide the functionality desired by a trait.</p>
-        </div>
+        <p>This allows app developers to focus on building OAM components, app operators to focus on operational capabilities through the OAM app config and infra operators to focus on Kubernetes. By leveraging the Open App Model, users now have a framework to define their apps on their Kubernetes clusters.</p>
+
+        <p>Currently, Rudr will leverage the defined trait to accomplish the task. This gives the freedom to use whatever underlying tool the user wants while providing a trait that focuses on the functionality and not the technology. In the future, Rudr might provide a set of default technologies to provide the functionality desired by a trait.</p>
+
+        <hr>
+
+        <p><a href="" class="button is-primary is-large"><span class="icon"><i class="fa fa-github"></i></span> &nbsp; Learn More</a></p>
       </div>
 
-      <div class="column is one-third">
-        <div class="box">
-          Lorem
-        </div>
-
-        <div class="box">
-          Ipsum
-          
-        </div>
-
-
-      </div>
     </div>
   </div>
 </section>
