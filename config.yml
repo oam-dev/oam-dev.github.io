@@ -51,7 +51,7 @@ params:
     socialmedia:
     - link: https://twitter.com/oamdev
       icon: twitter
-    - link: /#
+    - link: https://gitter.im/oam-dev/
       icon: slack
     - link: https://github.com/oam-dev/spec
       icon: github

@@ -296,6 +296,10 @@ $sidebar-min: 20vw;
 }
 
 #community {
+  img {
+    width: 10vw;
+  }
+  
   dl {
     dt, dd {
       display: inline-block;
