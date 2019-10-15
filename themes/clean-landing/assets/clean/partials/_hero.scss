@@ -11,7 +11,8 @@ Hero styles
     padding-top: 5rem;
     color: $brand;
     font-weight: 500;
-    font-size: 2.66rem;
+    font-size: 2.75vw;
+    padding-right: 5%;
     margin-bottom: 4rem;
 
     strong {
@@ -26,7 +27,8 @@ Hero styles
   }
 
   img {
-    margin-left: -1rem;
+    margin-left: -1vw;
+    min-width: auto;
   }
 
   .hero02 {

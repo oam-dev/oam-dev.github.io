@@ -26,10 +26,6 @@ body {
   padding: 0;
 }
 
-.page-wrapper {
-  margin-bottom: 0 !important;
-}
-
 body {
   font-family: 'Work Sans', sans-serif !important;
   background: $shade0 !important;
@@ -39,11 +35,18 @@ body {
   margin: 0;
 }
 
+.page-wrapper {
+  margin-bottom: 0 !important;
+ }
+
+$sidebar-min: 20vw;
+
 .sidebar-wrapper {
   min-height: 100vh;
   background: white;
-  min-width: 300px;
+  min-width: $sidebar-min;
   width: 15vw;
+  z-index: 600;
 
    a {
     @include transition;
@@ -59,9 +62,9 @@ body {
       img, svg {
         position: fixed;
         top: 2.825rem;
-        left: 3rem;
+        left: 3vw;
         width: 14vw;
-        max-height: 300px !important;
+        max-height: $sidebar-min !important;
         max-width: 25vw !important;
       }
     }
@@ -72,12 +75,13 @@ body {
       
       li {
         a {
-          font-size: 1.5rem;
+          font-size: 1.75vw;
+          // font-size: 1.5rem;
           color: $charcoal;
           display: inline-block;
-          min-width: 300px;
+          min-width: $sidebar-min;
           font-weight: 400;
-          padding: 0.425rem 3rem;
+          padding: 0.425rem 3vw;
           letter-spacing: 0.01em;
           @include ripple;
           text-align: left;
@@ -93,8 +97,8 @@ body {
     .sidebar-footer {
       img, svg {
         position: fixed;
-        bottom: 4rem;
-        left: 3rem;
+        bottom: 4vw;
+        left: 3vw;
         width: 3.333vw;
         max-height: 200px !important;
         max-width: 5vw !important;
@@ -106,6 +110,14 @@ body {
 .section,
 .section-feature-grey {
   background-color: transparent;
+}
+
+.main-wrapper {
+  max-width: 80vw;
+  z-index: 500;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
 }
 
 .content-wrapper {
@@ -166,7 +178,7 @@ body {
   }
 }
 
-#oldvnew {
+#overview {
   background: linear-gradient(180deg, darken($shadel, 3%) 0%, $shade0 100%);
   border-top: 2px solid rgba(255,255,255,0.35);
   min-height: 15rem;

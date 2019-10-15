@@ -6329,14 +6329,16 @@ Hero styles
     padding-top: 5rem;
     color: #2681D6;
     font-weight: 500;
-    font-size: 2.66rem;
+    font-size: 2.75vw;
+    padding-right: 5%;
     margin-bottom: 4rem; }
     .hero h1 strong {
       font-weight: 600; }
   .hero p strong {
     opacity: 0.8; }
   .hero img {
-    margin-left: -1rem; }
+    margin-left: -1vw;
+    min-width: auto; }
   .hero .hero02 img {
     margin: 0 3.5rem 0 0;
     float: right; }
@@ -6879,9 +6881,6 @@ body {
   margin: 0;
   padding: 0; }
 
-.page-wrapper {
-  margin-bottom: 0 !important; }
-
 body {
   font-family: 'Work Sans', sans-serif !important;
   background: #DDE7F4 !important;
@@ -6890,11 +6889,15 @@ body {
   padding: 0;
   margin: 0; }
 
+.page-wrapper {
+  margin-bottom: 0 !important; }
+
 .sidebar-wrapper {
   min-height: 100vh;
   background: white;
-  min-width: 300px;
-  width: 15vw; }
+  min-width: 20vw;
+  width: 15vw;
+  z-index: 600; }
   .sidebar-wrapper a {
     transition: all 0.3s ease-in-out; }
   .sidebar-wrapper .sidebar {
@@ -6907,20 +6910,20 @@ body {
     .sidebar-wrapper .sidebar .sidebar-header img, .sidebar-wrapper .sidebar .sidebar-header svg {
       position: fixed;
       top: 2.825rem;
-      left: 3rem;
+      left: 3vw;
       width: 14vw;
-      max-height: 300px !important;
+      max-height: 20vw !important;
       max-width: 25vw !important; }
     .sidebar-wrapper .sidebar ul {
       margin: 15vw 0 0 0;
       padding: 0; }
       .sidebar-wrapper .sidebar ul li a {
-        font-size: 1.5rem;
+        font-size: 1.75vw;
         color: #4F6579;
         display: inline-block;
-        min-width: 300px;
+        min-width: 20vw;
         font-weight: 400;
-        padding: 0.425rem 3rem;
+        padding: 0.425rem 3vw;
         letter-spacing: 0.01em;
         position: relative;
         display: inline-block;
@@ -6948,8 +6951,8 @@ body {
           background-color: #f0f5fa; }
     .sidebar-wrapper .sidebar .sidebar-footer img, .sidebar-wrapper .sidebar .sidebar-footer svg {
       position: fixed;
-      bottom: 4rem;
-      left: 3rem;
+      bottom: 4vw;
+      left: 3vw;
       width: 3.333vw;
       max-height: 200px !important;
       max-width: 5vw !important; }
@@ -6957,6 +6960,13 @@ body {
 .section,
 .section-feature-grey {
   background-color: transparent; }
+
+.main-wrapper {
+  max-width: 80vw;
+  z-index: 500;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative; }
 
 .content-wrapper {
   max-width: 960px;
@@ -6998,42 +7008,42 @@ body {
   text-align: center;
   margin: 2.5rem auto; }
 
-#oldvnew {
+#overview {
   background: linear-gradient(180deg, #d1dff0 0%, #DDE7F4 100%);
   border-top: 2px solid rgba(255, 255, 255, 0.35);
   min-height: 15rem;
   padding-top: 4rem;
   padding-bottom: 0; }
-  #oldvnew .content-wrapper {
+  #overview .content-wrapper {
     max-width: 92%; }
-  #oldvnew h3 {
+  #overview h3 {
     font-size: 0.925rem;
     text-transform: uppercase;
     letter-spacing: 0.15em;
     color: #1e67ab;
     margin-top: 1rem; }
-  #oldvnew h2 {
+  #overview h2 {
     font-size: 1.55rem;
     font-weight: bold;
     margin-bottom: 1.5rem; }
-  #oldvnew .box {
+  #overview .box {
     padding-left: 2.5rem; }
-  #oldvnew .oldway {
+  #overview .oldway {
     border: 2px dashed rgba(255, 255, 255, 0.5);
     background: rgba(255, 255, 255, 0.15);
     outline: none;
     box-shadow: none; }
-  #oldvnew ol {
+  #overview ol {
     padding-right: 5%;
     list-style-position: outside;
     padding-left: 1rem;
     color: #73CDF3; }
-    #oldvnew ol li {
+    #overview ol li {
       margin: 1.5rem 0;
       padding-right: 5%;
       line-height: 1.55;
       color: #3b4b5a; }
-  #oldvnew img {
+  #overview img {
     margin: 5rem auto -3rem; }
 
 #examples {
