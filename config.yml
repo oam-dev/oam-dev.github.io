@@ -1,4 +1,4 @@
-baseURL: https://oamdev.netlify.com/
+baseURL: https://oam-dev.github.io/
 languageCode: en-us
 title: OAM | Open Application Model Specification
 theme: clean-landing
@@ -14,7 +14,7 @@ params:
   navbarlogo:
   # Logo (from static/images/logos/___)
    image: logos/temp-logo.svg
-   link: https://openappmodel.io/
+   link: https://oam-dev.github.io/
   font:
     name: "Work Sans"
     sizes: [400,600]
@@ -30,10 +30,10 @@ params:
   # Customizable navbar. For a dropdown, add a "sublinks" list.
   sidebarlogo:
    image: logos/oam-borderless.svg
-   link: https://openappmodel.io/
+   link: https://oam-dev.github.io/
   sidebarIcon:
    image: logos/ohm-borderless.svg
-   link: https://openappmodel.io/
+   link: https://oam-dev.github.io/
   sidebar:
   - title: The Spec
     url: /#home

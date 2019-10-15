@@ -3,15 +3,35 @@
   <head>
 	<meta name="generator" content="Hugo 0.58.3" />
     
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  if(window.localStorage) {
+      ga('create', 'UA-149996186-1', 'www.openappmodel.io', {
+        'storage': 'none'
+        , 'clientId': window.localStorage.getItem('ga_clientId')
+      });
+      ga(function(tracker) {
+        window.localStorage.setItem('ga_clientId', tracker.get('clientId'));
+      });
+  }
+  else {
+      ga('create', 'UA-149996186-1, 'www.openappmodel.io');
+  }
+  ga('send', 'pageview');
+</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>OAM | Open Application Model Specification</title>
     
-<link rel="icon" type="image/png" href="https://oamdev.netlify.com/images/favicon.png" />
+<link rel="icon" type="image/png" href="https://oam-dev.github.io/images/favicon.png" />
 <link href="https://fonts.googleapis.com/css?family=Work&#43;Sans:400,600" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="/css/style.min.81ff9514f5a57d3533810e5fb3a62e50473514f0553ac6433a4741f1af672602.css" integrity="sha256-gf&#43;VFPWlfTUzgQ5fs6YuUEc1FPBVOsZDOkdB8a9nJgI=">
-<link rel="stylesheet" type="text/css" href="https://oamdev.netlify.com/css/icons.css">
+<link rel="stylesheet" type="text/css" href="/css/style.min.e3976d0611214f56499c9a77011ad382c57205e064b864fa8ce5f61d89c716ff.css" integrity="sha256-45dtBhEhT1ZJnJp3ARrTgsVyBeBkuGT6jOX2HYnHFv8=">
+<link rel="stylesheet" type="text/css" href="https://oam-dev.github.io/css/icons.css">
 
   </head>
   <body>
@@ -22,12 +42,12 @@
 
     
 
-<div class="page-wrapper columns is-gapless">
+<div class="page-wrapper columns is-mobile is-gapless">
     <div class="column is-narrow is-gapless sidebar-wrapper">
         
 <div class="sidebar">
   <div class="sidebar-header">
-    <a class="navbar-item" href="https://openappmodel.io/">
+    <a class="navbar-item" href="https://oam-dev.github.io/">
       <img src="/images/logos/oam-borderless.svg" alt="" width="112" height="28">
     </a>
   </div>
@@ -52,7 +72,7 @@
   </div>
 
   <div class="sidebar-footer">
-      <a class="navbar-item" href="https://openappmodel.io/">
+      <a class="navbar-item" href="https://oam-dev.github.io/">
         <img src="/images/logos/ohm-borderless.svg" alt="" width="112" height="28">
       </a>
     </div>
@@ -64,32 +84,31 @@
   <div class="content-wrapper">
 
     <div class="columns is-mobile hero01">
-      <div class="column is-half">
+      <div class="column">
         <img src="images/app-pic-01.svg" revealOnScroll alt="Application Devs" data-animation="fadeInBottom" />
       </div>
 
-      <div class="column is-half">
+      <div class="column">
         <h1 class="title">A team-centric <strong>standard</strong> for building cloud native apps.</h1>
-        
         <p>Open Application Model [OAM] describes a model where <strong>developers</strong> are responsible for defining application components.</p>
       </div>
     </div>
 
     <div class="columns is-mobile hero02">
-      <div class="column is-half">
+      <div class="column">
         <img src="images/app-pic-02.svg" revealOnScroll class="has-text-right" alt="Application Ops" data-animation="fadeInBottom" />
       </div>
-      <div class="column is-half">
+      <div class="column">
 
         <p>While <strong>application operators</strong> are responsible for creating instances of those components and assigning them application configurations.</p>
       </div>
     </div>
 
     <div class="columns is-mobile hero03">
-      <div class="column is-half">
+      <div class="column">
         <img src="images/app-pic-03.svg" revealOnScroll alt="Infrastructure Operators" data-animation="fadeInBottom" />
       </div>
-      <div class="column is-half">
+      <div class="column">
 
         <p>And <strong>infrastructure operators</strong> are responsible for declaring, installing, and maintaining the underlying services that are available on the platform.</p>
       </div>
@@ -125,7 +144,7 @@
               <ol>
                 <li>Developers have to spend more and more time on their app’s infrastructure tooling - images, registries, versioning, etc</li>
                 <li>Security, performance and configuration concerns are becoming more blurred with the app development processes.</li>
-                <li>Decisions about where you run your microservices can impact on how you configure and develop your app.</li>
+                <li>Decisions about where you run your  microservices can impact on how you configure and develop your app.</li>
               </ol>
             </div>
           </div>
@@ -270,7 +289,7 @@ spec:
       
       <div class="column is-three-quarters">
         <h1>Rudr: A Kubernetes Implementation of the Open Application Model</h1>
-        <small><a href="https://github.com/oam-dev/rudr/">github.com/oam-dev/rudr</a></small>
+        <small><a href="https://github.com/oam-dev/rudr">github.com/oam-dev/rudr</a></small>
       </div>
       
     </div>
@@ -278,14 +297,14 @@ spec:
     <div class="columns">
       <div class="column is-quarter has-text-left">
         <ul>
-          <li><a>Documentation</a></li>
-          <li><a>Getting Started</a></li>
-          <li><a>Rudr Github Repo</a></li>
+          <li><a href="https://github.com/oam-dev/rudr/tree/master/docs">Documentation</a></li>
+          <li><a href="https://github.com/oam-dev/rudr/blob/master/docs/quickstart/quickstart.md">Getting Started</a></li>
+          <li><a href="https://github.com/oam-dev/rudr">Rudr Github Repo</a></li>
         </ul>
       </div>
       <div class="column is-three-quarters">
 
-        <p>Rudr takes an incremental approach to solving problems. The architecture is a set of plugins for Kubernetes which allow OAM specifications to be implemented and deployed on clusters with native APIs <em>(you still use kubectl)</em>.</p>
+        <p><a href="https://github.com/oam-dev/rudr">Rudr</a> takes an incremental approach to solving problems. The architecture is a set of plugins for Kubernetes which allow OAM specifications to be implemented and deployed on clusters with native APIs <em>(you still use kubectl)</em>.</p>
 
         <p>This allows app developers to focus on building OAM components, app operators to focus on operational capabilities through the OAM app config and infra operators to focus on Kubernetes. By leveraging the Open App Model, users now have a framework to define their apps on their Kubernetes clusters.</p>
 
@@ -349,7 +368,7 @@ spec:
               <a class="" href="/#">
                 <span class="icon"><i class="fa fa-slack"></i></span> Slack
               </a>
-              <a class="" href="https://github.com/oam-dev/fspec">
+              <a class="" href="https://github.com/oam-dev/spec">
                 <span class="icon"><i class="fa fa-github"></i></span> Github
               </a>
             </p>
@@ -372,8 +391,8 @@ spec:
     <div id="backtotop"><a href="#"></a></div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> <script src="https://unpkg.com/feather-icons"></script>
-<script src="https://oamdev.netlify.com/js/landing.js"></script>
-<script src="https://oamdev.netlify.com/js/jquery.panelslider.min.js"></script>
+<script src="https://oam-dev.github.io/js/landing.js"></script>
+<script src="https://oam-dev.github.io/js/jquery.panelslider.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 <script async defer src="https://buttons.github.io/buttons.js"></script>
   </body>
