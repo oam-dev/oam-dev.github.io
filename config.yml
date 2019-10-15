@@ -9,12 +9,12 @@ disableKinds:
 
 params:
   openGraph: true
-  gitrepo: https://github.com/microsoft/hydra-spec/
+  gitrepo: https://github.com/oam-dev/spec
   description: Open Application Model Specification
   navbarlogo:
   # Logo (from static/images/logos/___)
    image: logos/temp-logo.svg
-   link: https://oam.dev/
+   link: https://openappmodel.io/
   font:
     name: "Work Sans"
     sizes: [400,600]
@@ -53,5 +53,5 @@ params:
       icon: twitter
     - link: /#
       icon: slack
-    - link: https://github.com/microsoft/oam-spec
+    - link: https://github.com/oam-dev/spec
       icon: github
