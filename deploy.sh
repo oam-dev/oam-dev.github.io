@@ -17,4 +17,4 @@ git commit -m "$msg"
 
 # Push source and build repos.
 git push origin dev
-git subtree push --prefix=public git@github.com:spencerlyon2/hugo_gh_blog.git gh-pages
+git subtree push --prefix=public git@github.com:oam-dev/oam-dev.github.io.git gh-pages
