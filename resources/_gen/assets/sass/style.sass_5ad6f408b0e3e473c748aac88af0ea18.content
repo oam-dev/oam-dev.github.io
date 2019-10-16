@@ -7088,7 +7088,8 @@ body {
     padding: 2rem 3rem; }
 
 #community img {
-  width: 10vw; }
+  max-height: 3vw;
+  margin: 2.5rem 0 0; }
 
 #community dl dt, #community dl dd {
   display: inline-block;

@@ -5,11 +5,30 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 <script>
-	window.onload = function () {
-    scrollSpy('#nav', {
-      sectionClass: '. main-wrapper > section',
-      menuActiveTarget: '.sidebar-item',
-      offset: 100
-    })
-  }
+  // $(document).ready(function() {
+  //   $(window).scrollspy();
+  // });
+
+  // window.onload = function () {
+  //   scrollSpy('#nav', {
+  //     sectionClass: '.main-wrapper section',
+  //     menuActiveTarget: '.sidebar-item',
+  //     offset: 100
+  //   })
+  // }
+
+  $(function domReady($) {
+    var $nav = $('#nav');
+    $nav.scrollspy({
+      min: $nav.offset().top,
+      onEnter: function(element, position) {
+        window.console.log('Scrollspy: Entering the navigation menu');
+        $nav.addClass('fixed');
+      },
+      onLeave: function(element, position) {
+        window.console.log('Scrollspy: Leaving the navigation menu');
+        $nav.removeClass('fixed');
+      }
+    });
+  });
 </script>
