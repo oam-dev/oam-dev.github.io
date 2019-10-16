@@ -49,7 +49,7 @@ params:
     logo: strapline.svg
     # Social media links (GitHub, Twitter, etc.). All are optional.
     socialmedia:
-    - link: https://twitter.com/oamdev
+    - link: https://twitter.com/oam_dev
       icon: twitter
     - link: https://gitter.im/oam-dev/
       icon: slack
