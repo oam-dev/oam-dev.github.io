@@ -1,5 +1,15 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> <script src="https://unpkg.com/feather-icons"></script>
 <script src="{{ "js/landing.js" | absURL }}"></script>
 <script src="{{ "js/jquery.panelslider.min.js" | absURL }}"></script>
+<script src="{{ "js/jquery.scrollspy.min.js" | absURL }}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 <script async defer src="https://buttons.github.io/buttons.js"></script>
+<script>
+	window.onload = function () {
+    scrollSpy('#nav', {
+      sectionClass: '. main-wrapper > section',
+      menuActiveTarget: '.sidebar-item',
+      offset: 100
+    })
+  }
+</script>

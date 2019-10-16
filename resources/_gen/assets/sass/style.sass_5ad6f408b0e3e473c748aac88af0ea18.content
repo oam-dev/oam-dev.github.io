@@ -6946,6 +6946,8 @@ body {
           opacity: 1;
           left: 0;
           bottom: 0; }
+        .sidebar-wrapper .sidebar ul li a.active {
+          color: #2681D6; }
         .sidebar-wrapper .sidebar ul li a:hover {
           color: #2681D6;
           background-color: #f0f5fa; }

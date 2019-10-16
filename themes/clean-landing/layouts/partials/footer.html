@@ -16,7 +16,7 @@
             <p>
               {{- range $socialMedia }}
               <a class="" href="{{ .link }}">
-                <span class="icon"><i class="fa fa-{{ .icon }}"></i></span> {{humanize .icon }}
+                <span class="icon"><i class="fa fa-{{ .icon }}"></i></span> {{humanize .name }}
               </a>
               {{- end }}
             </p>

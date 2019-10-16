@@ -19,7 +19,7 @@
       });
   }
   else {
-      ga('create', 'UA-149996186-1, 'www.openappmodel.io');
+      ga('create', 'UA-149996186-1', 'www.openappmodel.io');
   }
   ga('send', 'pageview');
 </script>
@@ -28,10 +28,10 @@
 <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>OAM | Open Application Model Specification</title>
     
-<link rel="icon" type="image/png" href="https://oam-dev.github.io/images/favicon.png" />
+<link rel="icon" type="image/png" href="https://openappmodel.io/images/favicon.png" />
 <link href="https://fonts.googleapis.com/css?family=Work&#43;Sans:400,600" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="/css/style.min.ac48532f485c8424e988b1b0bbfc09d6bb4c7830b3f8d27c6d27f7a9b8bd5e07.css" integrity="sha256-rEhTL0hchCTpiLGwu/wJ1rtMeDCz&#43;NJ8bSf3qbi9Xgc=">
-<link rel="stylesheet" type="text/css" href="https://oam-dev.github.io/css/icons.css">
+<link rel="stylesheet" type="text/css" href="/css/style.min.6a78621bc5b8139647fe4cbac56798b514f1ea73b19a1f644842d4d937cd156f.css" integrity="sha256-anhiG8W4E5ZH/ky6xWeYtRTx6nOxmh9kSELU2TfNFW8=">
+<link rel="stylesheet" type="text/css" href="https://openappmodel.io/css/icons.css">
 
   </head>
   <body>
@@ -52,7 +52,7 @@
     </a>
   </div>
   <div class="inner">
-    <ul>
+    <ul id="nav">
         <li><a href="/#home" class="sidebar-item is-secondary">
           The Spec
         </li></a>
@@ -377,7 +377,7 @@ spec:
                 <span class="icon"><i class="fa fa-twitter"></i></span> Twitter
               </a>
               <a class="" href="https://gitter.im/oam-dev/">
-                <span class="icon"><i class="fa fa-slack"></i></span> Slack
+                <span class="icon"><i class="fa fa-users"></i></span> Gitter
               </a>
               <a class="" href="https://github.com/oam-dev/spec">
                 <span class="icon"><i class="fa fa-github"></i></span> Github
@@ -402,9 +402,19 @@ spec:
     <div id="backtotop"><a href="#"></a></div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> <script src="https://unpkg.com/feather-icons"></script>
-<script src="https://oam-dev.github.io/js/landing.js"></script>
-<script src="https://oam-dev.github.io/js/jquery.panelslider.min.js"></script>
+<script src="https://openappmodel.io/js/landing.js"></script>
+<script src="https://openappmodel.io/js/jquery.panelslider.min.js"></script>
+<script src="https://openappmodel.io/js/jquery.scrollspy.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 <script async defer src="https://buttons.github.io/buttons.js"></script>
+<script>
+	window.onload = function () {
+    scrollSpy('#nav', {
+      sectionClass: '. main-wrapper > section',
+      menuActiveTarget: '.sidebar-item',
+      offset: 100
+    })
+  }
+</script>
   </body>
 </html>

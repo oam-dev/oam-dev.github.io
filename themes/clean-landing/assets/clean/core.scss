@@ -86,6 +86,10 @@ $sidebar-min: 20vw;
           @include ripple;
           text-align: left;
 
+          &.active {
+            color: $brand;
+          }
+
           &:hover {
             color: $brand;
             background-color: lighten($shade0, 5%);

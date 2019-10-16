@@ -1,4 +1,4 @@
-baseURL: https://oam-dev.github.io/
+baseURL: https://openappmodel.io/
 languageCode: en-us
 title: OAM | Open Application Model Specification
 theme: clean-landing
@@ -51,7 +51,10 @@ params:
     socialmedia:
     - link: https://twitter.com/oam_dev
       icon: twitter
+      name: Twitter
     - link: https://gitter.im/oam-dev/
-      icon: slack
+      icon: users
+      name: Gitter
     - link: https://github.com/oam-dev/spec
       icon: github
+      name: Github
