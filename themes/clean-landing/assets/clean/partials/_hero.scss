@@ -7,6 +7,12 @@ Hero styles
   padding-bottom: 5vw;
   min-height: 100vh;
 
+  .github-wrapper {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+
   h1 {
     padding-top: 5rem;
     color: $brand;

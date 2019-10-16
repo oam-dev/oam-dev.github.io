@@ -404,6 +404,9 @@ $sidebar-min: 20vw;
     max-width: 100%;
 
     .hero {
+      .github-wrapper {
+        top: 5rem;
+      }
       h1 {
         margin-top: 1rem;
         font-size: 3.5vw;
@@ -470,11 +473,6 @@ $sidebar-min: 20vw;
       right: -32vw;
       top: 15.33rem;
     }
-  }
-
-  footer.footer {
-    
-
   }
 } // mobile styles
 
