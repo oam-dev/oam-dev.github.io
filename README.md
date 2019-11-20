@@ -1,4 +1,4 @@
-A simple static site: [openappmodel.io](https://openappmodel.io/)
+A simple static site: [oam.dev](https://oam.dev/)
 Built with [Hugo](https://gohugo.io) and Github Pages.
 
 ## Important Note: Master Branch 
