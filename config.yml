@@ -1,4 +1,4 @@
-baseURL: https://openappmodel.io/
+baseURL: '/'
 languageCode: en-us
 title: OAM | Open Application Model Specification
 theme: clean-landing
