@@ -41,8 +41,8 @@ params:
     url: /#overview
   - title: Examples
     url: /#examples
-  - title: Implementation
-    url: /#rudr
+  - title: Implementations
+    url: /#implementations
   - title: Community
     url: /#community
   footer:
