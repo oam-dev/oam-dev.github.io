@@ -16,4 +16,4 @@ fi
 git commit -m "$msg"
 
 # Push source and build repos.
-git push origin `git subtree push --prefix=public git@github.com:oam-dev/oam-dev.github.io.git master`:master --force
+git push -f origin `git subtree push --prefix=public git@github.com:oam-dev/oam-dev.github.io.git master`:master --force
