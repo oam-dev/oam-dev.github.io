@@ -12,94 +12,86 @@
       <div class="column is-half">
         
         <div class="box">
-          <h2 class="title">Example-1.yml</h2>
+          <h2 class="title">MyComponent.yml</h2>
           <h4>Create a component:</h4>
           <hr>
 
           <pre>
-apiVersion: core.oam.dev/v1alpha1
-kind: ComponentSchematic
+apiVersion: core.oam.dev/v1alpha2
+kind: Component
 metadata:
   name: helloworld-python-v1
 spec:
-  name: helloworld-python
-  workloadType: core.oam.dev/v1alpha1.Server
-  containers:
-    - name: foo
-      image: oamdev/helloworld-python:v1
-      env:
-        - name: TARGET
-          fromParam: target
-        - name: PORT
-          fromParam: port
-      ports:
-        - type: tcp
-          containerPort: 9999
-          name: http
+  workload:
+    apiVersion: core.oam.dev/v1alpha2
+    kind: ContainerizedWorkload
+    metadata:
+      name: helloworld-python-v1-workload
+    spec:
+      containers:
+        - name: foo
+          image: oamdev/helloworld-python:v1
+          env:
+            - name: TARGET
+            - name: PORT
+              value: 8080
+          ports:
+            - protocol: TCP
+              containerPort: 9999
+              name: http
+          resources:
+            cpu:
+              required: "0.1"
+            memory:
+              required: "128"
   parameters:
     - name: target
-      type: string
-      default: World
+      description: "A value for the component to print out after 'Hello'. We suggest 'World'"
+      required: true
+      fieldPaths:
+        - spec.containers[0].env[0].value
     - name: port
-      type: string
-      default: "9999"
+      description: "The port for the component to listen on."
+      required: false
+      fieldPaths:
+        - spec.containers[0].env[1].value
+            
           </pre>
         </div>
       </div>
 
       <div class="column is-half">
         <div class="box">
-          <h2 class="title">Example-2.yml</h2>
-          <h4>Show a component and a config in one file:</h4>
+          <h2 class="title">MyAppConfig.yml</h2>
+          <h4>Use the component in an application:</h4>
           <hr>
 
           <pre>
-apiVersion: core.oam.dev/v1alpha1
-kind: ComponentSchematic
-metadata:
-  name: alpine-forever-v1
-spec:
-  workloadType: core.oam.dev/v1alpha1.SingletonServer
-  parameters:
-    - name: message
-      type: string
-      required: false
-    - name: unused_integer
-      type: number
-      required: false
-      default: 5678
-  containers:
-    - name: runner
-      image: technosophos/alpine-forever:latest
-      env:
-        - name: FOO
-          value: bar
-          fromParam: message
-        - name: UNUSED
-          value: "1234"
-          fromParam: unused_integer
----
-apiVersion: core.oam.dev/v1alpha1
+apiVersion: core.oam.dev/v1alpha2
 kind: ApplicationConfiguration
 metadata:
-  name: example-env-vars
+  name: first-app
 spec:
   components:
-    - name: alpine-forever-v1
-      instanceName: example-alpine-forever
+    - componentName: helloworld-python-v1
       parameterValues:
-        - name: message
-          value: Hello World
+        - name: target
+          value: World
+        - name: port
+          value: "80"
+      traits:
+        - trait:
+            apiVersion: core.oam.dev/v1alpha2
+            kind: ManualScalerTrait
+            metadata:
+              name: helloworld-python-v1
+            spec:
+              replicaCount: 3
           </pre>
         </div>
       </div>
 
     </div>
 
-    <div class="columns is-hidden-tablet">
-      <div class="column">
-        <p class="rudr-cta has-text-centered"><a href="https://github.com/oam-dev/rudr/tree/master/examples">See rudr/examples for OAM configurations.</a></p>
-      </div>
-    </div>
   </div>
 </section>
