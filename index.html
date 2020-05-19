@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
-	<meta name="generator" content="Hugo 0.58.3" />
+	<meta name="generator" content="Hugo 0.59.1" />
     
 
 <script>
@@ -122,13 +122,15 @@
       <div class="column is-full">
           <div class="button-cta has-text-centered">
             <a class="button is-primary is-large" href="https://github.com/oam-dev/spec">Read the Spec</a>
-            <p class="rudr-cta">Check out <a href="https://github.com/oam-dev/rudr"><strong>Rudr</strong></a> for a Kubernetes implementation of the specification. &darr;</p>
+            <p class="rudr-cta">Check out <a href="https://github.com/crossplane/crossplane"><strong>Crossplane</strong></a> for the Kubernetes implementation of the specification. &darr;</p>
+
           </div>
       </div>
     </div>
 
   </div>
 </section>
+
 
         
 <section class="section section-feature-grey is-medium" id="overview">
@@ -190,95 +192,87 @@
       <div class="column is-half">
         
         <div class="box">
-          <h2 class="title">Example-1.yml</h2>
+          <h2 class="title">MyComponent.yml</h2>
           <h4>Create a component:</h4>
           <hr>
 
           <pre>
-apiVersion: core.oam.dev/v1alpha1
-kind: ComponentSchematic
+apiVersion: core.oam.dev/v1alpha2
+kind: Component
 metadata:
   name: helloworld-python-v1
 spec:
-  name: helloworld-python
-  workloadType: core.oam.dev/v1alpha1.Server
-  containers:
-    - name: foo
-      image: oamdev/helloworld-python:v1
-      env:
-        - name: TARGET
-          fromParam: target
-        - name: PORT
-          fromParam: port
-      ports:
-        - type: tcp
-          containerPort: 9999
-          name: http
+  workload:
+    apiVersion: core.oam.dev/v1alpha2
+    kind: ContainerizedWorkload
+    metadata:
+      name: helloworld-python-v1-workload
+    spec:
+      containers:
+        - name: foo
+          image: oamdev/helloworld-python:v1
+          env:
+            - name: TARGET
+            - name: PORT
+              value: 8080
+          ports:
+            - protocol: TCP
+              containerPort: 9999
+              name: http
+          resources:
+            cpu:
+              required: "0.1"
+            memory:
+              required: "128"
   parameters:
     - name: target
-      type: string
-      default: World
+      description: "A value for the component to print out after 'Hello'. We suggest 'World'"
+      required: true
+      fieldPaths:
+        - spec.containers[0].env[0].value
     - name: port
-      type: string
-      default: "9999"
+      description: "The port for the component to listen on."
+      required: false
+      fieldPaths:
+        - spec.containers[0].env[1].value
+            
           </pre>
         </div>
       </div>
 
       <div class="column is-half">
         <div class="box">
-          <h2 class="title">Example-2.yml</h2>
-          <h4>Show a component and a config in one file:</h4>
+          <h2 class="title">MyAppConfig.yml</h2>
+          <h4>Use the component in an application:</h4>
           <hr>
 
           <pre>
-apiVersion: core.oam.dev/v1alpha1
-kind: ComponentSchematic
-metadata:
-  name: alpine-forever-v1
-spec:
-  workloadType: core.oam.dev/v1alpha1.SingletonServer
-  parameters:
-    - name: message
-      type: string
-      required: false
-    - name: unused_integer
-      type: number
-      required: false
-      default: 5678
-  containers:
-    - name: runner
-      image: technosophos/alpine-forever:latest
-      env:
-        - name: FOO
-          value: bar
-          fromParam: message
-        - name: UNUSED
-          value: "1234"
-          fromParam: unused_integer
----
-apiVersion: core.oam.dev/v1alpha1
+apiVersion: core.oam.dev/v1alpha2
 kind: ApplicationConfiguration
 metadata:
-  name: example-env-vars
+  name: first-app
 spec:
   components:
-    - name: alpine-forever-v1
-      instanceName: example-alpine-forever
+    - componentName: helloworld-python-v1
       parameterValues:
-        - name: message
-          value: Hello World
+        - name: target
+          value: World
+        - name: port
+          value: "80"
+      traits:
+        - trait:
+            apiVersion: core.oam.dev/v1alpha2
+            kind: ManualScalerTrait
+            metadata:
+              name: helloworld-python-v1
+            spec:
+              replicaCount: 3
           </pre>
         </div>
       </div>
 
     </div>
 
-    <div class="columns is-hidden-tablet">
-      <div class="column">
-        <p class="rudr-cta has-text-centered"><a href="https://github.com/oam-dev/rudr/tree/master/examples">See rudr/examples for OAM configurations.</a></p>
-      </div>
-    </div>
   </div>
 </section>
         
@@ -287,15 +281,15 @@ spec:
   <div class="content-wrapper">
     
     <div class="subtitle has-text-centered">
-      <h4>Implementation</h4>
+      <h4>Implementations</h4>
     </div>
 
     <div class="columns">
-      <div class="column is-quarter is-one-quarter-mobile has-text-left"><img src="images/rudr.svg" alt="Rudr" /></div>
+      <div class="column is-quarter is-one-quarter-mobile has-text-left"><img src="images/crossplane.png" alt="Crossplane" /></div>
       
       <div class="column is-three-quarters is-three-quarters-mobile">
-        <h1>Rudr: A Kubernetes Implementation of the Open Application Model</h1>
-        <small><a href="https://github.com/oam-dev/rudr">github.com/oam-dev/rudr</a></small>
+        <h1>Crossplane: The Kubernetes implementation of the Open Application Model</h1>
+        <small><a href="https://crossplane.io">crossplane.io</a></small>
       </div>
       
     </div>
@@ -303,34 +297,32 @@ spec:
     <div class="columns">
       <div class="column is-quarter has-text-left">
         <ul>
-          <li><a href="https://github.com/oam-dev/rudr/tree/master/docs">Documentation</a></li>
-          <li><a href="https://github.com/oam-dev/rudr/blob/master/docs/setup/install.md">Getting Started</a></li>
-          <li><a href="https://github.com/oam-dev/rudr">Rudr Github Repo</a></li>
+          <li><a href="https://crossplane.io/docs/latest">Documentation</a></li>
+          <li><a href="https://crossplane.io/docs/latest">Getting Started</a></li>
+          <li><a href="https://github.com/crossplane/crossplane">Crossplane on GitHub</a></li>
         </ul>
       </div>
       <div class="column is-three-quarters">
 
-        <p><a href="https://github.com/oam-dev/rudr">Rudr</a> takes an incremental approach to solving problems. The architecture is a set of plugins for Kubernetes which allow OAM specifications to be implemented and deployed on clusters with native APIs <em>(you still use kubectl)</em>.</p>
+        <p><a href="https://github.com/crossplane/crossplane">Crossplane</a> is an open source Kubernetes add-on that enables you to provision and manage OAM applications and the infrastructure they run on directly from Kubernetes.</p>
 
-        <p>This allows app developers to focus on building OAM components, app operators to focus on operational capabilities through the OAM app config and infra operators to focus on Kubernetes. By leveraging the Open App Model, users now have a framework to define their apps on their Kubernetes clusters.</p>
-
-        <p>Currently, Rudr will leverage the defined trait to accomplish the task. This gives the freedom to use whatever underlying tool the user wants while providing a trait that focuses on the functionality and not the technology. In the future, Rudr might provide a set of default technologies to provide the functionality desired by a trait.</p>
+        <p>This allows application developers to focus on writing code, app operators to focus on operational capabilities through the OAM app config, and infra operators to build out curated infrastructure and custom APIs using familiar Kubernetes tools and APIs.</p>
       </div>
     </div>
     <div class="columns">
       <div class="column is-quarter has-text-centered">
         <hr>
         
-        <p><a href="https://github.com/oam-dev/rudr" class="button is-primary is-large"><span class="icon"><i class="fa fa-github"></i></span> &nbsp; Learn More</a></p>
+        <p><a href="https://github.com/crossplane/crossplane" class="button is-primary is-large"><span class="icon"><i class="fa fa-github"></i></span> &nbsp; Learn More</a></p>
       </div>
     </div>
 
     <div class="columns">
-      <div class="column is-quarter is-one-quarter-mobile has-text-left"><img src="images/alibaba-cloud.png" alt="Rudr" /></div>
+      <div class="column is-quarter is-one-quarter-mobile has-text-left"><img src="images/alibaba-cloud.png" alt="Alibaba Cloud" /></div>
       
       <div class="column is-three-quarters is-three-quarters-mobile">
-        <h1>Alibaba</h1>
-        <small><a href="https://www.alibabacloud.com/">www.alibabacloud.com</a></small>
+        <h1>Alibaba Cloud</h1>
+        <small><a href="https://www.alibabacloud.com/">alibabacloud.com</a></small>
       </div>
       
     </div>
@@ -340,7 +332,7 @@ spec:
       </div>
       <div class="column is-three-quarters">
 
-        <p>Alibaba supports Open Application Model in their offerings:</p>
+        <p>Alibaba Cloud supports Open Application Model in their offerings:</p>
         <ul>
           <li><b>Alibaba Enterprise Distributed Application Service</b> (Available) - A PaaS platform for a variety of application deployment options and microservices solutions. (<a href="https://www.alibabacloud.com/product/edas">More info</a>)</li>
           <li><b>Alibaba Resource Orchestration Service</b> (Available) - Provides developers and system managers with a simple method to create and manage their Alibaba Cloud resources. (<a href="https://www.alibabacloud.com/product/ros">More info</a>)</li>
@@ -362,7 +354,8 @@ spec:
       </div>
       <div class="column is-three-quarters">
 
-        <p>A variety of parterns working on adding support for Open Application Model in their offerings:</p>
+        <p>There are a variety of projects working on adding support for Open Application Model in their offerings.</p>
+        <p>Have a project you'd like listed here? Open an issue on the <a href="https://github.com/oam-dev/oam-dev.github.io/issues/new/choose">oam.dev repo</a> and let us know!</p>
         <ul>
           <li><b>Rainbond</b> - Enterprise application cloud operating system. (<a href="https://github.com/goodrain/rainbond/issues/616">More Info</a>)</li>
         </ul>
@@ -370,6 +363,7 @@ spec:
     </div>
   </div>
 </section>
+
 
         <section class="section is-medium" id="community">
   <div class="content-wrapper">
@@ -388,6 +382,10 @@ spec:
       <div class="level-item has-text-centered">
         <img src="../images/logos/alibaba-cloud-new.png" alt="Alibaba Cloud" />
       </div>
+
+      <div class="level-item has-text-centered">
+        <img src="../images/logos/upbound.png" alt="Upbound" />
+      </div>
     </nav>
 
     <div class="content-wrapper">
@@ -396,10 +394,10 @@ spec:
           <dt>Mailing List</dt>
           <dd><a href="https://groups.google.com/forum/#!forum/oam-dev">https://groups.google.com/forum/#!forum/oam-dev</a></dd>
           <dt>Dev Meetings</dt>
-          <dd>Bi-weekly (Starting October 22nd), Tuesdays 10:30AM PST </a>
+          <dd>Bi-weekly (Starting October 22nd, 2019), Tuesdays 10:30AM PST </a>
           </dd>
           <dt>APAC Friendly Dev Meetings</dt>
-          <dd>Bi-weekly (Starting October 28th), Mondays 4:30PM PST </a>
+          <dd>Bi-weekly (Starting October 28th, 2019), Mondays 4:30PM PST </a>
           </dd>
           <dt>Meeting invite</dt>
           <dd><a href="https://us04web.zoom.us/j/661104426">https://us04web.zoom.us/j/661104426</a></dd>
