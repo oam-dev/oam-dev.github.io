@@ -93,8 +93,8 @@
       </div>
 
       <div class="column is-two-thirds-mobile">
-        <h1 class="title">An application centric <strong>standard</strong> for building cloud native app platforms.</h1>
-        <p>Open Application Model [OAM] describes a runtime-agnostic model to build application centric platforms where <strong>developers</strong> focus on applications and defining deployable components.</p>
+        <h1 class="title">An application centric <strong>standard</strong> for defining cloud native apps and building app-centric platforms.</h1>
+        <p>Open Application Model [OAM] describes a runtime-agnostic model to create application-centric platforms where <strong>developers</strong> focus on applications and defining deployable components.</p>
       </div>
     </div>
 
@@ -145,7 +145,7 @@
         <div class="column ">
           <div class="box oldway">
             <h3>Traditional Way</h3>
-            <h2 class="is-2">Building Platforms is Hard</h2>
+            <h2 class="is-2">Platforms are Hard</h2>
             <ol>
               <li>Developers spend time on infrastructure details instead of apps - ingress, labels, iptables rules, DNS, etc, and learning how the platform is implemented.</li>
               <li>Restricted platform capabilities - in-house APIs with opinionated abstractions and implementations, lack of interoperability.</li>
@@ -202,28 +202,24 @@ kind: Component
 metadata:
   name: web
 spec:
-  workload:
-    apiVersion: core.oam.dev/v1alpha2
-    kind: ContainerizedWorkload
-    spec:
-      containers:
-        - image: oamdev/helloworld-python:v1
-          ports:
-            - protocol: TCP
-              containerPort: 9999
-              name: http
+  type: Server
+  settings:
+    containers:
+      - image: oamdev/helloworld-python:v1
+        ports:
+          - protocol: TCP
+            containerPort: 9999
+            name: http
 ---
 apiVersion: core.oam.dev/v1alpha2
 kind: Component
 metadata:
   name: function
 spec:
-  workload:
-    apiVersion: faas.example.com/v1
-    kind: Function
-    spec:
-      runtime: java8
-      blobCodeUrl: http://xxx/f36286e6-f070-498f-a520-6dd3a589bd90
+  type: faas.example.com/v1.Function
+  settings:
+    runtime: java8
+    blobCodeUrl: http://xxx/f36286e6-f070-498f-a520-6dd3a589bd90
           </pre>
         </div>
       </div>
@@ -244,11 +240,11 @@ spec:
     - componentName: web
       traits:
         - name: autoscaler
-          spec:
+          properties:
             min: 1
             max: 100
         - name: rollout
-          spec:
+          properties:
             canary:
               maxSurge: 25%
               maxUnavailable: 0
@@ -257,7 +253,7 @@ spec:
     - componentName: function
       traits:
         - name: autoscaler
-          spec:
+          properties:
             min: 0
             max: 1000
             triggers:

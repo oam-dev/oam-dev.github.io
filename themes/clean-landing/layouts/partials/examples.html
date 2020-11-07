@@ -22,28 +22,24 @@ kind: Component
 metadata:
   name: web
 spec:
-  workload:
-    apiVersion: core.oam.dev/v1alpha2
-    kind: ContainerizedWorkload
-    spec:
-      containers:
-        - image: oamdev/helloworld-python:v1
-          ports:
-            - protocol: TCP
-              containerPort: 9999
-              name: http
+  type: Server
+  settings:
+    containers:
+      - image: oamdev/helloworld-python:v1
+        ports:
+          - protocol: TCP
+            containerPort: 9999
+            name: http
 ---
 apiVersion: core.oam.dev/v1alpha2
 kind: Component
 metadata:
   name: function
 spec:
-  workload:
-    apiVersion: faas.example.com/v1
-    kind: Function
-    spec:
-      runtime: java8
-      blobCodeUrl: http://xxx/f36286e6-f070-498f-a520-6dd3a589bd90
+  type: faas.example.com/v1.Function
+  settings:
+    runtime: java8
+    blobCodeUrl: http://xxx/f36286e6-f070-498f-a520-6dd3a589bd90
           </pre>
         </div>
       </div>
@@ -51,7 +47,7 @@ spec:
       <div class="column is-half">
         <div class="box">
           <h2 class="title">MyAppConfig.yml</h2>
-          <h4>Assign operational capabilities to components:</h4>
+          <h4>Assign operations to components:</h4>
           <hr>
 
           <pre>
@@ -64,11 +60,11 @@ spec:
     - componentName: web
       traits:
         - name: autoscaler
-          spec:
+          properties:
             min: 1
             max: 100
         - name: rollout
-          spec:
+          properties:
             canary:
               maxSurge: 25%
               maxUnavailable: 0
@@ -77,7 +73,7 @@ spec:
     - componentName: function
       traits:
         - name: autoscaler
-          spec:
+          properties:
             min: 0
             max: 1000
             triggers:
