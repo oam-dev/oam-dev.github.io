@@ -59,8 +59,8 @@
         <li><a href="/#overview" class="sidebar-item is-secondary">
           Overview
         </li></a>
-        <li><a href="/#examples" class="sidebar-item is-secondary">
-          Examples
+        <li><a href="/#implementations" class="sidebar-item is-secondary">
+          See It In Action
         </li></a>
         <li><a href="/#ecosystem" class="sidebar-item is-secondary">
           Ecosystem
@@ -94,16 +94,7 @@
 
       <div class="column is-two-thirds-mobile">
         <h1 class="title">An open <strong>standard</strong> for defining cloud native apps.</h1>
-        <p>Open Application Model [OAM] is runtime-agnostic specification that defines cloud native apps and enables building <strong>app-centric</strong> platforms by natural.</p>
-      </div>
-    </div>
-
-    <div class="columns is-mobile is-one-third-mobile hero02">
-      <div class="column">
-        <img src="images/app-pic-02.svg" revealOnScroll class="has-text-right" alt="Application Ops" data-animation="fadeInBottom" />
-      </div>
-      <div class="column is-two-thirds-mobile">
-        <p>Open Application Model provides <strong>consistent</strong> abstractions to declare, customize and maintain operational features of the app at ease.</p>
+        <p>Open Application Model [OAM] is runtime-agnostic specification that defines cloud native apps by natural and enables creating <strong>app-centric</strong> platforms where developer focus on code only.</p>
       </div>
     </div>
 
@@ -112,7 +103,7 @@
         <img src="images/app-pic-03.svg" revealOnScroll alt="Infrastructure Operators" data-animation="fadeInBottom" />
       </div>
       <div class="column is-two-thirds-mobile">
-        <p>Open Application Model is <strong>highly extensible</strong>.</p>
+        <p>Open Application Model is <strong>highly extensible</strong>. It provides <strong>modularized</strong> design to declare, customize and maintain operational capabilities per app needs.</p>
       </div>
     </div>
 
@@ -120,7 +111,7 @@
       <div class="column is-full">
           <div class="button-cta has-text-centered">
             <a class="button is-primary is-large" href="https://github.com/oam-dev/spec">Read the Spec</a>
-            <p class="rudr-cta">Check out <a href="https://github.com/oam-dev/kubevela"><strong>KubeVela</strong></a> to experience Open Application Model on Kubernetes!</p>
+            <p class="rudr-cta">Check out <a href="https://github.com/oam-dev/kubevela"><strong>KubeVela</strong></a> to experience Open Application Model on Kubernetes. &darr;</p>
           </div>
       </div>
     </div>
@@ -169,98 +160,51 @@
         
       </div>
 
-      <p class="rudr-cta">OAM is <em>runtime-agnostic</em>. Read the <a href="https://github.com/oam-dev/spec/blob/master/1.purpose_and_goals.md">Purpose and Goals</a> doc for more background information.</p>
+      <p class="rudr-cta">OAM is <em>runtime-agnostic</em>. Read its <a href="https://github.com/oam-dev/spec/blob/master/1.purpose_and_goals.md">Purpose and Goals</a> for more background information.</p>
 
     </div>
   </div>
 </section>
 
         
-<section class="section is-medium" id="examples">
+
+        
+<section class="section is-medium" id="implementations">
   <div class="content-wrapper">
     
     <div class="subtitle has-text-centered">
-      <h4>Examples</h4>
+      <h4>See It In Action</h4>
     </div>
 
-    <br><br><br>
-    
-    <div class="columns is-hidden-mobile">
-      <div class="column is-half">
+    <div class="columns">
+      <div class="column is-quarter is-one-quarter-mobile has-text-left"><img src="images/kubevela.svg" alt="KubeVela" /></div>
+      
+      <div class="column is-three-quarters is-three-quarters-mobile">
+        <h1>KubeVela: The Fully Extensible App Platform based on Kubernetes and Open Application Model.</h1>
+      </div>
+      
+    </div>
+
+    <div class="columns">
+      <div class="column is-quarter has-text-left">
+        <ul>
+          <li><a href="https://kubevela.io">Documentation</a></li>
+          <li><a href="https://kubevela.io/#/en/quick-start">Getting Started</a></li>
+          <li><a href="https://github.com/oam-dev/kubevela">Github Repo</a></li>
+        </ul>
+      </div>
+      <div class="column is-three-quarters">
+        <p>For developers, <a href="https://github.com/oam-dev/kubevela">KubeVela</a> is an easy-to-use tool that enables them to describe and ship their applications to Kubernetes with minimal effort.</p>
+        <p>For platform builders, it serves as a framework that empowers them to create developer facing yet highly extensible platforms at ease.</p>
+      </div>
+    </div>
+    <div class="columns">
+      <div class="column is-quarter has-text-centered">
+        <hr>
         
-        <div class="box">
-          <h2 class="title">Example 1</h2>
-          <h4>Run workload types</h4>
-          <hr>
-
-          <pre>
-apiVersion: core.oam.dev/v1alpha2
-kind: Component
-metadata:
-  name: web
-spec:
-  type: Server
-  settings:
-    containers:
-      - image: oamdev/helloworld-python:v1
-        ports:
-          - protocol: TCP
-            containerPort: 9999
-            name: http
----
-apiVersion: core.oam.dev/v1alpha2
-kind: Component
-metadata:
-  name: function
-spec:
-  type: Function
-  settings:
-    runtime: java8
-    blobCodeUrl: http://xxx/f36286e6-f070-498f-a520-6dd3a589bd90
-          </pre>
-        </div>
+        <p><a href="https://github.com/oam-dev/kubevela" class="button is-primary is-large"><span class="icon"><i class="fa fa-github"></i></span> &nbsp; Learn More</a></p>
       </div>
-
-      <div class="column is-half">
-        <div class="box">
-          <h2 class="title">Example 2</h2>
-          <h4>Assign operational features to app</h4>
-          <hr>
-
-          <pre>
-apiVersion: core.oam.dev/v1alpha2
-kind: ApplicationConfiguration
-metadata:
-  name: myapp
-spec:
-  components:
-    - componentName: web
-      traits:
-        - name: autoscaler
-          properties:
-            min: 1
-            max: 100
-        - name: rollout
-          properties:
-            canary:
-              maxSurge: 25%
-              maxUnavailable: 0
-              steps:
-                - setWeight: 10
-    - componentName: function
-      traits:
-        - name: autoscaler
-          properties:
-            min: 0
-            max: 1000
-            triggers:
-              - type: metaq
-          </pre>
-        </div>
-      </div>
-
     </div>
-
   </div>
 </section>
         
@@ -286,7 +230,7 @@ spec:
       <div class="column is-one-fifths is-hidden-mobile has-text-left"><img src="images/logos/crossplane.png" alt="Crossplane" /></div>
       
       <div class="column is-four-fifths is-four-fifths-mobile">
-        <p>Crossplane offers the implementation of OAM control plane objects on Kubernetes.</p>
+        <p>Crossplane offers the implementation of OAM control plane on Kubernetes, with integration of cloud services by default.</p>
         <small><a href="https://github.com/crossplane/crossplane">Crossplane</a></small>
       </div>
       
