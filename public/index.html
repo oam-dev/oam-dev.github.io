@@ -93,8 +93,8 @@
       </div>
 
       <div class="column is-two-thirds-mobile">
-        <h1 class="title">An open <strong>standard</strong> for defining cloud native apps and building app-centric platforms.</h1>
-        <p>Open Application Model [OAM] describes a runtime-agnostic approach to create platforms where developers <strong>focus</strong> on code and applications only.</p>
+        <h1 class="title">An open <strong>standard</strong> for defining cloud native apps.</h1>
+        <p>Open Application Model [OAM] is runtime-agnostic model that defines cloud native apps by natural and enables building platforms where developers <strong>focus</strong> on their apps only.</p>
       </div>
     </div>
 
@@ -103,8 +103,7 @@
         <img src="images/app-pic-02.svg" revealOnScroll class="has-text-right" alt="Application Ops" data-animation="fadeInBottom" />
       </div>
       <div class="column is-two-thirds-mobile">
-
-        <p>Open Application Model is <strong>highly extensible</strong> to bring in any application operation features or abstractions.</p>
+        <p>With <strong>consistent</strong> abstractions to declare operational features of the app, and standard interfaces to build platform capabilities in app-centric approach.</p>
       </div>
     </div>
 
@@ -113,8 +112,7 @@
         <img src="images/app-pic-03.svg" revealOnScroll alt="Infrastructure Operators" data-animation="fadeInBottom" />
       </div>
       <div class="column is-two-thirds-mobile">
-
-        <p>With <strong>standard interfaces</strong> for infrastructure operators to declaring, customizing, and maintaining the underlying capabilities that are available on the platform.</p>
+        <p>Open Application Model is <strong>highly extensible</strong>.</p>
       </div>
     </div>
 
@@ -122,8 +120,7 @@
       <div class="column is-full">
           <div class="button-cta has-text-centered">
             <a class="button is-primary is-large" href="https://github.com/oam-dev/spec">Read the Spec</a>
-            <p class="rudr-cta">Check out <strong>Ecosystem</strong> for the implementations and adoptions of OAM. &darr;</p>
-
+            <p class="rudr-cta">Check out <a href="https://github.com/oam-dev/kubevela"><strong>KubeVela</strong></a> to experience Open Application Model [OAM] on Kubernetes!</p>
           </div>
       </div>
     </div>
@@ -145,7 +142,7 @@
         <div class="column ">
           <div class="box oldway">
             <h3>Traditional Way</h3>
-            <h2 class="is-2">Platforms are Complicated</h2>
+            <h2 class="is-2">Cloud-native is "Hard"</h2>
             <ol>
               <li>Developers spend time on infrastructure details instead of apps - ingress, labels, iptables rules, DNS, etc, and learning how the platform is implemented.</li>
               <li>Restricted platform capabilities - in-house APIs with opinionated abstractions and implementations, lack of interoperability.</li>
@@ -157,7 +154,7 @@
         <div class="column">
           <div class="box newway">
             <h3>The OAM Way</h3>
-            <h2 class="is-2">An <em>App-centric</em> Model</h2>
+            <h2 class="is-2">An <em>App-centric</em> Approach</h2>
             <ol>
               <li>Application first - the platform is built around a self-contained app model, where operational characteristics are also part of app definition, free of infrastructure here.</li>
               <li>Clarity and extensibility - an open standard to modularize your platform capabilities into reusable pieces, with freedom to bring your own abstractions and implementations.</li>
@@ -172,7 +169,7 @@
         
       </div>
 
-      <p class="rudr-cta">OAM is <em>runtime-agnostic</em>. Read the <a href="https://github.com/oam-dev/spec/blob/master/introduction.md">Intro</a> doc for more background and user stories.</p>
+      <p class="rudr-cta">OAM is <em>runtime-agnostic</em>. Read the <a href="https://github.com/oam-dev/spec/blob/master/1.purpose_and_goals.md">Purpose and Goals</a> doc for more background information.</p>
 
     </div>
   </div>
@@ -192,8 +189,8 @@
       <div class="column is-half">
         
         <div class="box">
-          <h2 class="title">MyComponents.yml</h2>
-          <h4>Create components:</h4>
+          <h2 class="title">Example 1</h2>
+          <h4>Run workload types</h4>
           <hr>
 
           <pre>
@@ -226,8 +223,8 @@ spec:
 
       <div class="column is-half">
         <div class="box">
-          <h2 class="title">MyAppConfig.yml</h2>
-          <h4>Assign operations to components:</h4>
+          <h2 class="title">Example 2</h2>
+          <h4>Assign operational features to app</h4>
           <hr>
 
           <pre>
@@ -279,7 +276,7 @@ spec:
       <div class="column is-one-fifths is-hidden-mobile has-text-left"><img src="images/logos/4-paradigm.png" alt="4 Paradigm" /></div>
       
       <div class="column is-four-fifths is-four-fifths-mobile">
-        <p>4 Paradigm use OAM to build cloud native PaaS to serve its AI customers.</p>
+        <p>4Paradigm adopts OAM to build its cloud native AI platform that serves numerous customers in machine learning industry.</p>
         <small><a href="http://www.4paradigm.com/">4 Paradigm</a></small>
       </div>
       
@@ -289,7 +286,7 @@ spec:
       <div class="column is-one-fifths is-hidden-mobile has-text-left"><img src="images/logos/crossplane.png" alt="Crossplane" /></div>
       
       <div class="column is-four-fifths is-four-fifths-mobile">
-        <p>Crossplane: Crossplane offers the open source Kubernetes implementation of OAM that enables you to provision OAM applications and the cloud infrastructure they need directly from Kubernetes.</p>
+        <p>Crossplane offers the implementation of OAM control plane objects on Kubernetes.</p>
         <small><a href="https://github.com/crossplane/crossplane">Crossplane</a></small>
       </div>
       
@@ -300,7 +297,7 @@ spec:
       <div class="column is-one-fifths is-hidden-mobile has-text-left"><img src="images/logos/alibaba-cloud.png" alt="Alibaba Cloud" /></div>
       
       <div class="column is-four-fifths is-four-fifths-mobile">
-        <p>Alibaba Cloud Enterprise Distributed Application Service (EDAS) is a Kubernetes native application platform built by OAM.</p>
+        <p>Alibaba Cloud Enterprise Distributed Application Service (EDAS) is a Kubernetes native application platform built with OAM.</p>
         <small><a href="https://www.alibabacloud.com/zh/product/edas">AlibabaCloud EDAS</a></small>
       </div>
       
