@@ -39,8 +39,11 @@ params:
     url: /#home
   - title: Overview
     url: /#overview
-  - title: Examples
-    url: /#examples
+  # add examples.htlml back when user interfacing objects are introduced in the spec
+  # - title: Examples
+  #   url: /#examples
+  - title: See It In Action
+    url: /#implementations
   - title: Ecosystem
     url: /#ecosystem
   - title: Community
