@@ -35,15 +35,12 @@ params:
    image: logos/ohm-borderless.svg
    link: https://oam-dev.github.io/
   sidebar:
-  - title: The Spec
+  - title: The Model
     url: /#home
-  - title: Overview
-    url: /#overview
-  # add examples.htlml back when user interfacing objects are introduced in the spec
-  # - title: Examples
-  #   url: /#examples
-  - title: See It In Action
+  - title: The Platform
     url: /#implementations
+  - title: Summary
+    url: /#overview
   - title: Ecosystem
     url: /#ecosystem
   - title: Community
