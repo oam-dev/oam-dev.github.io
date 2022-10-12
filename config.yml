@@ -1,23 +1,22 @@
-baseURL: '/'
+baseURL: "/"
 languageCode: en-us
 title: OAM | Open Application Model Specification
 theme: clean-landing
 
-disableKinds:
- -taxonomy
- -taxonomyTerm
+disableKinds: -taxonomy
+  -taxonomyTerm
 
 params:
   openGraph: true
   gitrepo: https://github.com/oam-dev/spec
   description: Open Application Model Specification
   navbarlogo:
-  # Logo (from static/images/logos/___)
-   image: logos/temp-logo.svg
-   link: https://oam-dev.github.io/
+    # Logo (from static/images/logos/___)
+    image: logos/temp-logo.svg
+    link: https://oam-dev.github.io/
   font:
     name: "Work Sans"
-    sizes: [400,600]
+    sizes: [400, 600]
   hero:
     # Main hero title
     title: oam
@@ -29,32 +28,32 @@ params:
     buttonlink: "#"
   # Customizable navbar. For a dropdown, add a "sublinks" list.
   sidebarlogo:
-   image: logos/oam-borderless.svg
-   link: https://oam-dev.github.io/
+    image: logos/oam-borderless.svg
+    link: https://oam-dev.github.io/
   sidebarIcon:
-   image: logos/ohm-borderless.svg
-   link: https://oam-dev.github.io/
+    image: logos/ohm-borderless.svg
+    link: https://oam-dev.github.io/
   sidebar:
-  - title: The Model
-    url: /#home
-  - title: The Platform
-    url: /#implementations
-  - title: Summary
-    url: /#overview
-  - title: Ecosystem
-    url: /#ecosystem
-  - title: Community
-    url: /#community
+    - title: The Model
+      url: /#home
+    - title: The Platform
+      url: /#implementations
+    - title: Summary
+      url: /#overview
+    - title: Ecosystem
+      url: /#ecosystem
+    - title: Community
+      url: /#community
   footer:
     logo: strapline.svg
     # Social media links (GitHub, Twitter, etc.). All are optional.
     socialmedia:
-    - link: https://twitter.com/oam_dev
-      icon: twitter
-      name: Twitter
-    - link: https://gitter.im/oam-dev/
-      icon: users
-      name: Gitter
-    - link: https://github.com/oam-dev/spec
-      icon: github
-      name: Github
+      - link: https://twitter.com/oam_dev
+        icon: twitter
+        name: Twitter
+      - link: https://cloud-native.slack.com/archives/C01BLQ3HTJA
+        icon: users
+        name: Slack
+      - link: https://github.com/oam-dev/spec
+        icon: github
+        name: Github
