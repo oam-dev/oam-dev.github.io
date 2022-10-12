@@ -1,456 +1,437 @@
 <!DOCTYPE html>
 <html lang="en-us">
+  <head>
+	<meta name="generator" content="Hugo 0.101.0" />
+    
 
-<head>
-  <meta name="generator" content="Hugo 0.101.0" />
-
-
-  <script>
-    (function (i, s, o, g, r, a, m) {
-      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-        (i[r].q = i[r].q || []).push(arguments)
-      }, i[r].l = 1 * new Date(); a = s.createElement(o),
-        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-    if (window.localStorage) {
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  if(window.localStorage) {
       ga('create', 'UA-149996186-1', 'www.openappmodel.io', {
         'storage': 'none'
         , 'clientId': window.localStorage.getItem('ga_clientId')
       });
-      ga(function (tracker) {
+      ga(function(tracker) {
         window.localStorage.setItem('ga_clientId', tracker.get('clientId'));
       });
-    }
-    else {
+  }
+  else {
       ga('create', 'UA-149996186-1', 'www.openappmodel.io');
-    }
-    ga('send', 'pageview');
-  </script>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>OAM | Open Application Model Specification</title>
+  }
+  ga('send', 'pageview');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>OAM | Open Application Model Specification</title>
+    
+<link rel="icon" type="image/png" href="/images/favicon.png" />
+<link href="https://fonts.googleapis.com/css?family=Work&#43;Sans:400,600" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/css/style.min.083e3a26f9d22b108c59a81a4790558392a0cb93e659311c6322fd896c2794a6.css" integrity="sha256-CD46JvnSKxCMWagaR5BVg5Kgy5PmWTEcYyL9iWwnlKY=">
+<link rel="stylesheet" type="text/css" href="/css/icons.css">
 
-  <link rel="icon" type="image/png" href="/images/favicon.png" />
-  <link href="https://fonts.googleapis.com/css?family=Work&#43;Sans:400,600" rel="stylesheet">
-  <link rel="stylesheet" type="text/css"
-    href="/css/style.min.083e3a26f9d22b108c59a81a4790558392a0cb93e659311c6322fd896c2794a6.css"
-    integrity="sha256-CD46JvnSKxCMWagaR5BVg5Kgy5PmWTEcYyL9iWwnlKY=">
-  <link rel="stylesheet" type="text/css" href="/css/icons.css">
+  </head>
+  <body>
+    
+    <div id="preloader">
+      <div id="status"></div>
+    </div>
 
-</head>
+    
 
-<body>
-
-  <div id="preloader">
-    <div id="status"></div>
+<div class="page-wrapper columns is-mobile is-gapless">
+    <div class="column is-narrow is-gapless sidebar-wrapper">
+        
+<div class="sidebar">
+  <div class="sidebar-header">
+    <a class="navbar-item" href="https://oam-dev.github.io/">
+      <img src="/images/logos/oam-borderless.svg" alt="" width="112" height="28">
+    </a>
+  </div>
+  <div class="inner">
+    <ul id="nav">
+        <li><a href="/#home" class="sidebar-item is-secondary">
+          The Model
+        </li></a>
+        <li><a href="/#implementations" class="sidebar-item is-secondary">
+          The Platform
+        </li></a>
+        <li><a href="/#overview" class="sidebar-item is-secondary">
+          Summary
+        </li></a>
+        <li><a href="/#ecosystem" class="sidebar-item is-secondary">
+          Ecosystem
+        </li></a>
+        <li><a href="/#community" class="sidebar-item is-secondary">
+          Community
+        </li></a>
+    </ul>
   </div>
 
+  <div class="sidebar-footer">
+      <a class="navbar-item" href="https://oam-dev.github.io/">
+        <img src="/images/logos/ohm-borderless.svg" alt="" width="112" height="28">
+      </a>
+    </div>
+</div>
+    </div>
+    <div class="column main-wrapper">
+        
+        <section class="hero is-default" id="home">
+  <div class="content-wrapper">
+
+    <div class="columns is-vcentered is-mobile hero01">
+      <div class="column is-one-third-mobile">
+        <img src="images/app-pic-01.svg" revealOnScroll alt="Application Devs" data-animation="fadeInBottom" />
+      </div>
+
+      <div class="github-wrapper">
+        <a class="github-button" href="https://github.com/oam-dev/spec" data-size="large" data-show-count="true" aria-label="Star oam-dev/spec on GitHub">Star</a>
+      </div>
+
+      <div class="column is-two-thirds-mobile">
+        <h1 class="title">An open <strong>model</strong> for defining cloud native apps.</h1>
+      </div>
+    </div>
+
+    <div class="columns is-mobile is-one-third-mobile hero02">
+      <div class="column">
+        <img src="images/app-pic-02.svg" revealOnScroll alt="Application Operators" data-animation="fadeInBottom" />
+      </div>
+      <div class="column is-two-thirds-mobile">
+        <p>Focused on <i>application</i> rather than container or orchestrator, Open Application Model [OAM] brings modular, extensible, and portable design for modeling application deployment with higher level yet consistent API.</p>
+      </div>
+    </div>
+
+    <div class="columns is-mobile is-one-third-mobile hero03">
+      <div class="column">
+        <img src="images/app-pic-03.svg" revealOnScroll alt="Infrastructure Operators" data-animation="fadeInBottom" />
+      </div>
+      <div class="column is-two-thirds-mobile">
+        <p>This is the key to enable simple yet robust application delivery across hybrid environments including Kubernetes, cloud, or even IoT devices.</p>
+      </div>
+    </div>
+
+    <div class="columns is-mobile">
+      <div class="column is-full">
+          <div class="button-cta has-text-centered">
+            <a class="button is-primary is-large" href="https://github.com/oam-dev/spec">Learn the Model</a>
+            <p class="rudr-cta">Check out <a href="https://github.com/oam-dev/kubevela"><strong>KubeVela</strong></a> to use Open Application Model in real world. &darr;</p>
+          </div>
+      </div>
+    </div>
+
+  </div>
+</section>
 
 
-  <div class="page-wrapper columns is-mobile is-gapless">
-    <div class="column is-narrow is-gapless sidebar-wrapper">
+        
+<section class="section is-medium" id="implementations">
+  <div class="content-wrapper">
+    
+    <div class="subtitle has-text-centered">
+      <h4>The Platform</h4>
+    </div>
 
-      <div class="sidebar">
-        <div class="sidebar-header">
-          <a class="navbar-item" href="https://oam-dev.github.io/">
-            <img src="/images/logos/oam-borderless.svg" alt="" width="112" height="28">
-          </a>
+    <div class="columns">
+      <div class="column is-quarter is-one-quarter-mobile has-text-left"><img src="images/kubevela.svg" alt="KubeVela" /></div>
+      
+      <div class="column is-three-quarters is-three-quarters-mobile">
+        <h1><a href="https://github.com/oam-dev/kubevela">KubeVela</a> as the Open Application Model platform intends to make deploying and managing applications across today's hybrid, multi-cloud environments easier and faster than ever.</h1>
+
+        <p>KubeVela leverages Kubernetes as application delivery control plane but allows you to deploy (and manage) containerized workloads, cloud functions, databases, or even EC2 instances with a consistent workflow.</p>
+      </div>
+      
+    </div>
+
+    <div class="columns">
+      <div class="column is-quarter has-text-left">
+        <ul>
+          <li><a href="https://kubevela.io">Documentation</a></li>
+          <li><a href="https://github.com/oam-dev/kubevela">Github Repo</a></li>
+        </ul>
+      </div>
+      <div class="column is-three-quarters">
+        <p>KubeVela is fully extensible in a programmable approach so it adapts to your needs when you grow.</p>
+      </div>
+    </div>
+    <div class="columns">
+      <div class="column is-quarter has-text-centered">
+        <hr>
+        
+        <p><a href="https://github.com/oam-dev/kubevela" class="button is-primary is-large"><span class="icon"><i class="fa fa-github"></i></span> &nbsp; Learn KubeVela</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+        
+<section class="section section-feature-grey is-medium" id="overview">
+  <div class="content-wrapper">
+
+    <div class="subtitle has-text-centered">
+      <h4>Summary</h4>
+    </div>
+
+    <div class="content-wrapper">
+      <div class="columns">
+        <div class="column ">
+          <div class="box oldway">
+            <h3>Traditional Way</h3>
+            <h2 class="is-2">App Deployment is Hard</h2>
+            <ol>
+              <li>Developers spend time on infrastructure details instead of apps - ingress, labels, DNS, etc, and learning how the infrastructure is implemented.</li>
+              <li>Inextensible - upper layer platform may be introduced, but it's almost certain that the needs of your app will outgrow the capabilities of that platform soon.</li>
+              <li>Runtime lock-in - app description is tightly coupled with the runtime infrastructure, which heavily impact on how you configure, develop and operate the app across hybrid environments.</li>
+            </ol>
+          </div>
         </div>
-        <div class="inner">
-          <ul id="nav">
-            <li><a href="/#home" class="sidebar-item is-secondary">
-                The Model
-            </li></a>
-            <li><a href="/#implementations" class="sidebar-item is-secondary">
-                The Platform
-            </li></a>
-            <li><a href="/#overview" class="sidebar-item is-secondary">
-                Summary
-            </li></a>
-            <li><a href="/#ecosystem" class="sidebar-item is-secondary">
-                Ecosystem
-            </li></a>
-            <li><a href="/#community" class="sidebar-item is-secondary">
-                Community
-            </li></a>
-          </ul>
+
+        <div class="column">
+          <div class="box newway">
+            <h3>The OAM Way</h3>
+            <h2 class="is-2">An <em>App-centric</em> Approach</h2>
+            <ol>
+              <li>Application first - define the app with a self-contained model, where operational behaviors as part of app definition, free of infrastructure here.</li>
+              <li>Clarity and extensibility - an open standard to modularize platform capabilities into reusable pieces, assemble them into an app deployment per your own needs, fully self-service.</li>
+              <li>Runtime agnostic - a consistent experience to deploy and operate your apps across on-prem clusters, cloud providers or even edge devices.</li>
+            </ol>
+          </div>
         </div>
 
-        <div class="sidebar-footer">
-          <a class="navbar-item" href="https://oam-dev.github.io/">
-            <img src="/images/logos/ohm-borderless.svg" alt="" width="112" height="28">
-          </a>
+      </div>
+
+      <div class="column has-text-centered is-three-fifths is-offset-one-fifth">
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+        
+<section class="section is-medium" id="ecosystem">
+  <div class="content-wrapper">
+
+    <div class="subtitle has-text-centered">
+      <h4>Ecosystem</h4>
+    </div>
+
+    <div class="columns">
+      <div class="column is-one-fifths is-hidden-mobile has-text-left"><img src="images/logos/4-paradigm.png"
+          alt="4 Paradigm" /></div>
+
+      <div class="column is-four-fifths is-four-fifths-mobile">
+        <p>4Paradigm adopts OAM to build its cloud native AI platform that serves numerous customers in machine learning
+          industry.</p>
+        <small><a href="http://www.4paradigm.com/">4 Paradigm</a></small>
+      </div>
+
+    </div>
+
+    <div class="columns">
+      <div class="column is-one-fifths is-hidden-mobile has-text-left"><img src="images/logos/crossplane.png"
+          alt="Crossplane" /></div>
+
+      <div class="column is-four-fifths is-four-fifths-mobile">
+        <p>Crossplane brings cloud services to your OAM applications in Kubernetes native approach.</p>
+        <small><a href="https://github.com/crossplane/crossplane">Crossplane</a></small>
+      </div>
+
+    </div>
+
+
+    <div class="columns">
+      <div class="column is-one-fifths is-hidden-mobile has-text-left"><img src="images/logos/alibaba-cloud.png"
+          alt="Alibaba Cloud" /></div>
+
+      <div class="column is-four-fifths is-four-fifths-mobile">
+        <p>Alibaba Cloud Enterprise Distributed Application Service (EDAS) is a Kubernetes native application platform
+          built with OAM.</p>
+        <small><a href="https://www.alibabacloud.com/zh/product/edas">AlibabaCloud EDAS</a></small>
+      </div>
+
+    </div>
+
+    <div class="columns">
+      <div class="column is-one-fifths is-hidden-mobile has-text-left"><img
+          src="images/logos/meshery-logo-light-text.svg" alt="Meshery" /></div>
+
+      <div class="column is-four-fifths is-four-fifths-mobile">
+        <p>Meshery enables the easy adoption, operation, and management of any service mesh for OAM based application
+          delivery workflow.</p>
+        <small><a href="https://layer5.io/meshery">Meshery</a></small>
+      </div>
+
+    </div>
+
+    <div class="columns">
+      <div class="column is-one-fifths is-hidden-mobile has-text-left" style="display: flex; align-items: center;"><img
+          src="images/logos/napptive-kubernetes-app-platform.png" alt="Napptive Kubernetes application platform"
+          title="Napptive Kubernetes application platform" /></div>
+
+      <div class="column is-four-fifths is-four-fifths-mobile">
+        <p>Napptive offers a managed cloud-native application platform centered on Kubernetes and OAM.</p>
+        <small><a href="https://napptive.com/platform" title="Napptive Kubernetes application platform">Napptive
+            Playground</a></small>
+      </div>
+
+    </div>
+
+    <div class="has-text-centered">
+      <p>Learn more about who is
+        <a href="https://github.com/oam-dev/kubevela/issues/1662">adopting OAM in production.</a>
+      </p>
+    </div>
+
+  </div>
+</section>
+
+        <section class="section is-medium" id="community">
+  <div class="content-wrapper">
+
+    <div class="subtitle has-text-centered">
+      <h4>Community</h4>
+    </div>
+
+    <hr>
+
+    <nav class="level">
+      <div class="level-item has-text-centered">
+        <img src="../images/logos/microsoft.png" alt="Microsoft" />
+      </div>
+
+      <div class="level-item has-text-centered">
+        <img src="../images/logos/alibaba-cloud-new.png" alt="Alibaba Cloud" />
+      </div>
+    </nav>
+
+    <div class="content-wrapper" style="padding-top: 3px ;">
+      <div>
+        <p class="rudr-cta"> OAM is driven by real world practices along with KubeVela. Join us! &darr;</p>
+      </div>
+      <div class="column">
+        <dl class="box">
+          <dt>Community Repo</dt>
+          <dd><a href="https://github.com/kubevela/community">https://github.com/kubevela/community</a>
+          </dd>
+          <dt style="border-top: 2px gray dashed; margin-top: 10px; padding-top: 10px;">Dev Meetings</dt>
+          <dd style="border-top: 2px gray dashed; margin-top: 10px; padding-top: 10px;">Bi-weekly (Starting Oct 25,
+            2022),
+            Tuesdays
+            07:30am Pacific
+            Time (PST) </a>
+          </dd>
+          <dt>Meeting invite</dt>
+          <dd><a
+              href="https://us02web.zoom.us/j/88638962723?pwd=MVhCZnNub2t0R3BmMUNEWE9vendLUT09">https://zoom.us/j/88638962723</a>
+          </dd>
+          <dt>Meeting notes</dt>
+          <dd><a
+              href="https://docs.google.com/document/d/1nqdFEyULekyksFHtFvgvFAYE-0AMHKoS3RMnaKsarjs/edit?usp=sharing">Notes
+              doc</a></dd>
+          <dt>Meeting Records</dt>
+          <dd><a href="https://www.youtube.com/channel/UCSCTHhGI5XJ0SEhDHVakPAA/videos">YouTube Videos </a></dd>
+          <dt>IM Channel</dt>
+          <dd><a href="https://cloud-native.slack.com/archives/C01BLQ3HTJA">CNCF Slack OAM/KubeVela Channel </a>
+          </dd>
+
+          <dt style="border-top: 2px gray dashed; margin-top: 10px; padding-top: 10px;">APAC Friendly Dev Meetings
+            (Chinese)</dt>
+          <dd style="border-top: 2px gray dashed; margin-top: 10px; padding-top: 10px;">Bi-weekly APAC (Starting Oct 18,
+            2022), Tuesdays 19:00pm China Standard Time
+            (CST) </a>
+          </dd>
+          <dt>Meeting invite (Chinese)</dt>
+          <dd><a
+              href="https://us02web.zoom.us/j/88035629406?pwd=OWp2TlNqM0NjUjhoTlF6eGZMNURuZz09">https://zoom.us/j/88035629406</a>
+          </dd>
+          <dt>Meeting Records (Chinese)</dt>
+          <dd><a href="https://space.bilibili.com/180074935/channel/seriesdetail?sid=1842207">Bilibili Videos</a>
+          </dd>
+          <dt>IM Channel (Chinese)</dt>
+          <dd><a href="https://page.dingtalk.com/wow/dingtalk/act/en-home">DingTalk Group: 23310022</a>
+          </dd>
+          </dt>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+        
+<footer class="footer">
+  <div class="columns">
+    <div class="column is-half">
+      <div class="footer-logo is-hidden-mobile">
+        <img src="/images/logos/strapline.svg">
+      </div>
+    </div>
+    <div class="column is-half is-full-mobile">
+      <div class="content has-text-right has-text-centered-mobile">
+          <p>
+            <a class="" href="https://twitter.com/oam_dev">
+              <span class="icon"><i class="fa fa-twitter"></i></span> Twitter
+            </a>
+            <a class="" href="https://cloud-native.slack.com/archives/C01BLQ3HTJA">
+              <span class="icon"><i class="fa fa-users"></i></span> Slack
+            </a>
+            <a class="" href="https://github.com/oam-dev/spec">
+              <span class="icon"><i class="fa fa-github"></i></span> Github
+            </a>
+          </p>
         </div>
       </div>
     </div>
-    <div class="column main-wrapper">
-
-      <section class="hero is-default" id="home">
-        <div class="content-wrapper">
-
-          <div class="columns is-vcentered is-mobile hero01">
-            <div class="column is-one-third-mobile">
-              <img src="images/app-pic-01.svg" revealOnScroll alt="Application Devs" data-animation="fadeInBottom" />
-            </div>
-
-            <div class="github-wrapper">
-              <a class="github-button" href="https://github.com/oam-dev/spec" data-size="large" data-show-count="true"
-                aria-label="Star oam-dev/spec on GitHub">Star</a>
-            </div>
-
-            <div class="column is-two-thirds-mobile">
-              <h1 class="title">An open <strong>model</strong> for defining cloud native apps.</h1>
-            </div>
-          </div>
-
-          <div class="columns is-mobile is-one-third-mobile hero02">
-            <div class="column">
-              <img src="images/app-pic-02.svg" revealOnScroll alt="Application Operators"
-                data-animation="fadeInBottom" />
-            </div>
-            <div class="column is-two-thirds-mobile">
-              <p>Focused on <i>application</i> rather than container or orchestrator, Open Application Model [OAM]
-                brings modular, extensible, and portable design for modeling application deployment with higher level
-                yet consistent API.</p>
-            </div>
-          </div>
-
-          <div class="columns is-mobile is-one-third-mobile hero03">
-            <div class="column">
-              <img src="images/app-pic-03.svg" revealOnScroll alt="Infrastructure Operators"
-                data-animation="fadeInBottom" />
-            </div>
-            <div class="column is-two-thirds-mobile">
-              <p>This is the key to enable simple yet robust application delivery across hybrid environments including
-                Kubernetes, cloud, or even IoT devices.</p>
-            </div>
-          </div>
-
-          <div class="columns is-mobile">
-            <div class="column is-full">
-              <div class="button-cta has-text-centered">
-                <a class="button is-primary is-large" href="https://github.com/oam-dev/spec">Learn the Model</a>
-                <p class="rudr-cta">Check out <a
-                    href="https://github.com/oam-dev/kubevela"><strong>KubeVela</strong></a> to use Open Application
-                  Model in real world. &darr;</p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </section>
+  </div>
+</footer>
 
 
-
-      <section class="section is-medium" id="implementations">
-        <div class="content-wrapper">
-
-          <div class="subtitle has-text-centered">
-            <h4>The Platform</h4>
-          </div>
-
-          <div class="columns">
-            <div class="column is-quarter is-one-quarter-mobile has-text-left"><img src="images/kubevela.svg"
-                alt="KubeVela" /></div>
-
-            <div class="column is-three-quarters is-three-quarters-mobile">
-              <h1><a href="https://github.com/oam-dev/kubevela">KubeVela</a> as the Open Application Model platform
-                intends to make deploying and managing applications across today's hybrid, multi-cloud environments
-                easier and faster than ever.</h1>
-
-              <p>KubeVela leverages Kubernetes as application delivery control plane but allows you to deploy (and
-                manage) containerized workloads, cloud functions, databases, or even EC2 instances with a consistent
-                workflow.</p>
-            </div>
-
-          </div>
-
-          <div class="columns">
-            <div class="column is-quarter has-text-left">
-              <ul>
-                <li><a href="https://kubevela.io">Documentation</a></li>
-                <li><a href="https://github.com/oam-dev/kubevela">Github Repo</a></li>
-              </ul>
-            </div>
-            <div class="column is-three-quarters">
-              <p>KubeVela is fully extensible in a programmable approach so it adapts to your needs when you grow.</p>
-            </div>
-          </div>
-          <div class="columns">
-            <div class="column is-quarter has-text-centered">
-              <hr>
-
-              <p><a href="https://github.com/oam-dev/kubevela" class="button is-primary is-large"><span class="icon"><i
-                      class="fa fa-github"></i></span> &nbsp; Learn KubeVela</a></p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-
-      <section class="section section-feature-grey is-medium" id="overview">
-        <div class="content-wrapper">
-
-          <div class="subtitle has-text-centered">
-            <h4>Summary</h4>
-          </div>
-
-          <div class="content-wrapper">
-            <div class="columns">
-              <div class="column ">
-                <div class="box oldway">
-                  <h3>Traditional Way</h3>
-                  <h2 class="is-2">App Deployment is Hard</h2>
-                  <ol>
-                    <li>Developers spend time on infrastructure details instead of apps - ingress, labels, DNS, etc, and
-                      learning how the infrastructure is implemented.</li>
-                    <li>Inextensible - upper layer platform may be introduced, but it's almost certain that the needs of
-                      your app will outgrow the capabilities of that platform soon.</li>
-                    <li>Runtime lock-in - app description is tightly coupled with the runtime infrastructure, which
-                      heavily impact on how you configure, develop and operate the app across hybrid environments.</li>
-                  </ol>
-                </div>
-              </div>
-
-              <div class="column">
-                <div class="box newway">
-                  <h3>The OAM Way</h3>
-                  <h2 class="is-2">An <em>App-centric</em> Approach</h2>
-                  <ol>
-                    <li>Application first - define the app with a self-contained model, where operational behaviors as
-                      part of app definition, free of infrastructure here.</li>
-                    <li>Clarity and extensibility - an open standard to modularize platform capabilities into reusable
-                      pieces, assemble them into an app deployment per your own needs, fully self-service.</li>
-                    <li>Runtime agnostic - a consistent experience to deploy and operate your apps across on-prem
-                      clusters, cloud providers or even edge devices.</li>
-                  </ol>
-                </div>
-              </div>
-
-            </div>
-
-            <div class="column has-text-centered is-three-fifths is-offset-one-fifth">
-
-            </div>
-          </div>
-        </div>
-      </section>
-
-
-      <section class="section is-medium" id="ecosystem">
-        <div class="content-wrapper">
-
-          <div class="subtitle has-text-centered">
-            <h4>Ecosystem</h4>
-          </div>
-
-          <div class="columns">
-            <div class="column is-one-fifths is-hidden-mobile has-text-left"><img src="images/logos/4-paradigm.png"
-                alt="4 Paradigm" /></div>
-
-            <div class="column is-four-fifths is-four-fifths-mobile">
-              <p>4Paradigm adopts OAM to build its cloud native AI platform that serves numerous customers in machine
-                learning industry.</p>
-              <small><a href="http://www.4paradigm.com/">4 Paradigm</a></small>
-            </div>
-
-          </div>
-
-          <div class="columns">
-            <div class="column is-one-fifths is-hidden-mobile has-text-left"><img src="images/logos/crossplane.png"
-                alt="Crossplane" /></div>
-
-            <div class="column is-four-fifths is-four-fifths-mobile">
-              <p>Crossplane brings cloud services to your OAM applications in Kubernetes native approach.</p>
-              <small><a href="https://github.com/crossplane/crossplane">Crossplane</a></small>
-            </div>
-
-          </div>
-
-
-          <div class="columns">
-            <div class="column is-one-fifths is-hidden-mobile has-text-left"><img src="images/logos/alibaba-cloud.png"
-                alt="Alibaba Cloud" /></div>
-
-            <div class="column is-four-fifths is-four-fifths-mobile">
-              <p>Alibaba Cloud Enterprise Distributed Application Service (EDAS) is a Kubernetes native application
-                platform built with OAM.</p>
-              <small><a href="https://www.alibabacloud.com/zh/product/edas">AlibabaCloud EDAS</a></small>
-            </div>
-
-          </div>
-
-          <div class="columns">
-            <div class="column is-one-fifths is-hidden-mobile has-text-left"><img
-                src="images/logos/meshery-logo-light-text.svg" alt="Meshery" /></div>
-
-            <div class="column is-four-fifths is-four-fifths-mobile">
-              <p>Meshery enables the easy adoption, operation, and management of any service mesh for OAM based
-                application delivery workflow.</p>
-              <small><a href="https://layer5.io/meshery">Meshery</a></small>
-            </div>
-
-          </div>
-
-          <div class="columns">
-            <div class="column is-one-fifths is-hidden-mobile has-text-left"><img
-                src="images/logos/napptive-kubernetes-app-platform.png" alt="Napptive Kubernetes application platform"
-                title="Napptive Kubernetes application platform" /></div>
-
-            <div class="column is-four-fifths is-four-fifths-mobile">
-              <p>Napptive offers a managed cloud-native application platform centered on Kubernetes and OAM.</p>
-              <small><a href="https://napptive.com/platform" title="Napptive Kubernetes application platform">Napptive
-                  Playground</a></small>
-            </div>
-
-          </div>
-
-          <div class="has-text-centered">
-            <p>Learn more about who is
-              <a href="https://github.com/oam-dev/kubevela/issues/1662">adopting OAM in production.</a>
-            </p>
-          </div>
-
-        </div>
-      </section>
-
-
-      <section class="section is-medium" id="community">
-        <div class="content-wrapper">
-
-          <div class="subtitle has-text-centered">
-            <h4>Community</h4>
-          </div>
-
-          <hr>
-
-          <nav class="level">
-            <div class="level-item has-text-centered">
-              <img src="../images/logos/microsoft.png" alt="Microsoft" />
-            </div>
-
-            <div class="level-item has-text-centered">
-              <img src="../images/logos/alibaba-cloud-new.png" alt="Alibaba Cloud" />
-            </div>
-          </nav>
-
-          <div class="content-wrapper">
-            <div class="column">
-              <dl class="box">
-                <dt>Community Repo</dt>
-                <dd><a href="https://github.com/kubevela/community">https://github.com/kubevela/community</a>
-                </dd>
-                <dt>Dev Meetings</dt>
-                <dd>Bi-weekly (Starting Oct 25, 2022), Tuesdays 07:30am Pacific Time (PST) </a>
-                </dd>
-                <dt>Meeting invite</dt>
-                <dd><a
-                    href="https://us02web.zoom.us/j/88638962723?pwd=MVhCZnNub2t0R3BmMUNEWE9vendLUT09">https://zoom.us/j/88638962723</a>
-                </dd>
-                <dt>Meeting notes</dt>
-                <dd><a
-                    href="https://docs.google.com/document/d/1nqdFEyULekyksFHtFvgvFAYE-0AMHKoS3RMnaKsarjs/edit?usp=sharing">Notes
-                    doc</a></dd>
-                <dt>Meeting Records</dt>
-                <dd><a href="https://www.youtube.com/channel/UCSCTHhGI5XJ0SEhDHVakPAA/videos">YouTube Videos </a></dd>
-                <dt>IM Channel</dt>
-                <dd><a href="https://cloud-native.slack.com/archives/C01BLQ3HTJA">CNCF Slack OAM/KubeVela Channel </a>
-                </dd>
-                <dt>APAC Friendly Dev Meetings (Chinese)</dt>
-                <dd>Bi-weekly APAC (Starting Oct 18, 2022), Tuesdays 19:00pm China Standard Time (CST) </a>
-                </dd>
-                <dt>Meeting invite (Chinese)</dt>
-                <dd><a
-                    href="https://us02web.zoom.us/j/88035629406?pwd=OWp2TlNqM0NjUjhoTlF6eGZMNURuZz09">https://zoom.us/j/88035629406</a>
-                </dd>
-                <dt>Meeting Records (Chinese)</dt>
-                <dd><a href="https://space.bilibili.com/180074935/channel/seriesdetail?sid=1842207">Bilibili Videos</a>
-                </dd>
-                <dt>IM Channel (Chinese)</dt>
-                <dd><a href="https://page.dingtalk.com/wow/dingtalk/act/en-home">DingTalk Group: 23310022</a>
-                </dd>
-                </dt>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-
-
-      <footer class="footer">
-        <div class="columns">
-          <div class="column is-half">
-            <div class="footer-logo is-hidden-mobile">
-              <img src="/images/logos/strapline.svg">
-            </div>
-          </div>
-          <div class="column is-half is-full-mobile">
-            <div class="content has-text-right has-text-centered-mobile">
-              <p>
-                <a class="" href="https://twitter.com/oam_dev">
-                  <span class="icon"><i class="fa fa-twitter"></i></span> Twitter
-                </a>
-                <a class="" href="https://gitter.im/oam-dev/">
-                  <span class="icon"><i class="fa fa-users"></i></span> Gitter
-                </a>
-                <a class="" href="https://github.com/oam-dev/spec">
-                  <span class="icon"><i class="fa fa-github"></i></span> Github
-                </a>
-              </p>
-            </div>
-          </div>
-        </div>
+        
+        <div id="backtotop"><a href="#"></a></div>
     </div>
-    </footer>
+</div>
 
 
 
+    
     <div id="backtotop"><a href="#"></a></div>
-  </div>
-  </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> <script src="https://unpkg.com/feather-icons"></script>
+<script src="/js/landing.js"></script>
+<script src="/js/jquery.panelslider.min.js"></script>
+<script src="/js/jquery.scrollspy.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<script>
+  
+  
+  
 
+  
+  
+  
+  
+  
+  
+  
 
-
-  <div id="backtotop"><a href="#"></a></div>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-  <script src="https://unpkg.com/feather-icons"></script>
-  <script src="/js/landing.js"></script>
-  <script src="/js/jquery.panelslider.min.js"></script>
-  <script src="/js/jquery.scrollspy.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-  <script async defer src="https://buttons.github.io/buttons.js"></script>
-  <script>
-
-
-
-
-
-
-
-
-
-
-
-
-    $(function domReady($) {
-      var $nav = $('#nav');
-      $nav.scrollspy({
-        min: $nav.offset().top,
-        onEnter: function (element, position) {
-          window.console.log('Scrollspy: Entering the navigation menu');
-          $nav.addClass('fixed');
-        },
-        onLeave: function (element, position) {
-          window.console.log('Scrollspy: Leaving the navigation menu');
-          $nav.removeClass('fixed');
-        }
-      });
+  $(function domReady($) {
+    var $nav = $('#nav');
+    $nav.scrollspy({
+      min: $nav.offset().top,
+      onEnter: function(element, position) {
+        window.console.log('Scrollspy: Entering the navigation menu');
+        $nav.addClass('fixed');
+      },
+      onLeave: function(element, position) {
+        window.console.log('Scrollspy: Leaving the navigation menu');
+        $nav.removeClass('fixed');
+      }
     });
-  </script>
-</body>
-
+  });
+</script>
+  </body>
 </html>
