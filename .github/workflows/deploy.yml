@@ -1,0 +1,44 @@
+name: deploy
+
+# Builds the site with Hugo and publishes the output to the master branch,
+# which GitHub Pages serves at https://oam.dev. Replaces the manual
+# deploy.sh flow that required a local Hugo install.
+on:
+  push:
+    branches:
+      - dev
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+# Serialize deploys: concurrent runs race on pushing the master branch.
+concurrency:
+  group: pages-deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@2752ce1d29631191ea3f27c23495fa06139a5b78 # v3
+        with:
+          # The theme targets Hugo 0.138+ (see commit 4f16e44, "Fix Hugo
+          # v0.138+ compatibility issues"); the 0.58.3 pin in netlify.toml
+          # and the 0.101.0 build of the committed public/ both predate it.
+          # Extended is needed for the SASS pipeline.
+          hugo-version: '0.138.0'
+          extended: true
+
+      - name: Build site
+        run: hugo
+
+      - name: Publish to GitHub Pages branch
+        uses: peaceiris/actions-gh-pages@84c30a85c19949d7eee79c4ff27748b70285e453 # v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: master
+          publish_dir: ./public
