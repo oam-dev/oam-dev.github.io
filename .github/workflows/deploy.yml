@@ -34,6 +34,13 @@ jobs:
           hugo-version: '0.169.0'
           extended: true
 
+      - name: Setup Dart Sass
+        # The theme's SASS pipeline uses the dartsass transpiler (libsass is
+        # deprecated in Hugo). Keep the version in sync with local setups.
+        run: |
+          curl -sSL https://github.com/sass/dart-sass/releases/download/1.108.2/dart-sass-1.108.2-linux-x64.tar.gz | tar xz
+          echo "$PWD/dart-sass" >> "$GITHUB_PATH"
+
       - name: Build site
         run: hugo
 
