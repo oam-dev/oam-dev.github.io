@@ -1,0 +1,37 @@
+{{- /* Project-level override of themes/clean-landing/layouts/partials/footer.html
+       that adds the Linux Foundation copyright and trademark notice required
+       for CNCF project websites. */}}
+{{- $footer      := .Site.Params.footer }}
+{{- $logo        := index $footer "logo" }}
+{{- $quickLinks  := index $footer "quicklinks" }}
+{{- $socialMedia := index $footer "socialmedia" }}
+{{- $bulmaLogo   := index $footer "bulmalogo" }}
+<footer class="footer">
+  <div class="columns">
+    <div class="column is-half">
+      <div class="footer-logo is-hidden-mobile">
+        <img src="{{ printf "/images/logos/%s" $logo | relURL }}">
+      </div>
+    </div>
+    <div class="column is-half is-full-mobile">
+      <div class="content has-text-right has-text-centered-mobile">
+          <p>
+            {{- range $socialMedia }}
+            <a class="" href="{{ .link }}">
+              <span class="icon"><i class="fa fa-{{ .icon }}"></i></span> {{humanize .name }}
+            </a>
+            {{- end }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content has-text-centered is-size-7">
+    <p>
+      &copy; {{ now.Year }} The Open Application Model Authors. All rights reserved.
+      The Linux Foundation has registered trademarks and uses trademarks. For a list
+      of trademarks of The Linux Foundation, please see our
+      <a href="https://www.linuxfoundation.org/legal/trademark-usage">Trademark Usage</a> page.
+    </p>
+  </div>
+</footer>
