@@ -26,11 +26,12 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@2752ce1d29631191ea3f27c23495fa06139a5b78 # v3
         with:
-          # The theme targets Hugo 0.138+ (see commit 4f16e44, "Fix Hugo
-          # v0.138+ compatibility issues"); the 0.58.3 pin in netlify.toml
-          # and the 0.101.0 build of the committed public/ both predate it.
-          # Extended is needed for the SASS pipeline.
-          hugo-version: '0.138.0'
+          # Current Hugo, verified to produce output identical to the
+          # 0.138.0 build of this site apart from the generator meta tag
+          # and RSS whitespace. The theme requires 0.138+ (commit 4f16e44);
+          # extended is needed for the SASS pipeline. Keep in sync with
+          # HUGO_VERSION in netlify.toml.
+          hugo-version: '0.169.0'
           extended: true
 
       - name: Build site
