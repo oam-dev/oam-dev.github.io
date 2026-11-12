@@ -37,8 +37,11 @@ jobs:
       - name: Setup Dart Sass
         # The theme's SASS pipeline uses the dartsass transpiler (libsass is
         # deprecated in Hugo). Keep the version in sync with local setups.
+        # The checksum pins the exact artifact; recompute it when bumping.
         run: |
-          curl -sSL https://github.com/sass/dart-sass/releases/download/1.108.2/dart-sass-1.108.2-linux-x64.tar.gz | tar xz
+          curl -sSLo dart-sass.tar.gz https://github.com/sass/dart-sass/releases/download/1.108.2/dart-sass-1.108.2-linux-x64.tar.gz
+          echo "32d2eb5b83cbc180fce9657ff3c57401a9006c59eccfe0bfdde0aa755a66d42f  dart-sass.tar.gz" | sha256sum -c -
+          tar xzf dart-sass.tar.gz && rm dart-sass.tar.gz
           echo "$PWD/dart-sass" >> "$GITHUB_PATH"
 
       - name: Build site
