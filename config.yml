@@ -1,5 +1,5 @@
 baseURL: "/"
-languageCode: en-us
+locale: en-us
 title: OAM | Open Application Model Specification
 theme: clean-landing
 

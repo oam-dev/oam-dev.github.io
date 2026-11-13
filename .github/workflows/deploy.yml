@@ -1,0 +1,55 @@
+name: deploy
+
+# Builds the site with Hugo and publishes the output to the master branch,
+# which GitHub Pages serves at https://oam.dev. Replaces the manual
+# deploy.sh flow that required a local Hugo install.
+on:
+  push:
+    branches:
+      - dev
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+# Serialize deploys: concurrent runs race on pushing the master branch.
+concurrency:
+  group: pages-deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@2752ce1d29631191ea3f27c23495fa06139a5b78 # v3
+        with:
+          # Current Hugo, verified to produce output identical to the
+          # 0.138.0 build of this site apart from the generator meta tag
+          # and RSS whitespace. The theme requires 0.138+ (commit 4f16e44);
+          # extended is needed for the SASS pipeline. Keep in sync with
+          # HUGO_VERSION in netlify.toml.
+          hugo-version: '0.169.0'
+          extended: true
+
+      - name: Setup Dart Sass
+        # The theme's SASS pipeline uses the dartsass transpiler (libsass is
+        # deprecated in Hugo). Keep the version in sync with local setups.
+        # The checksum pins the exact artifact; recompute it when bumping.
+        run: |
+          curl -sSLo dart-sass.tar.gz https://github.com/sass/dart-sass/releases/download/1.108.2/dart-sass-1.108.2-linux-x64.tar.gz
+          echo "32d2eb5b83cbc180fce9657ff3c57401a9006c59eccfe0bfdde0aa755a66d42f  dart-sass.tar.gz" | sha256sum -c -
+          tar xzf dart-sass.tar.gz && rm dart-sass.tar.gz
+          echo "$PWD/dart-sass" >> "$GITHUB_PATH"
+
+      - name: Build site
+        run: hugo
+
+      - name: Publish to GitHub Pages branch
+        uses: peaceiris/actions-gh-pages@84c30a85c19949d7eee79c4ff27748b70285e453 # v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: master
+          publish_dir: ./public

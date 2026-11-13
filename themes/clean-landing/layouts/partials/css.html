@@ -1,7 +1,7 @@
 {{- $inServerMode := hugo.IsServer }}
 {{- $sass         := "style.sass" }}
 {{- $cssTarget    := "css/style.css" }}
-{{- $cssOpts      := cond ($inServerMode) (dict "targetPath" $cssTarget "enableSourceMap" true) (dict "targetPath" $cssTarget "outputStyle" "compressed") }}
+{{- $cssOpts      := cond ($inServerMode) (dict "targetPath" $cssTarget "enableSourceMap" true "transpiler" "dartsass") (dict "targetPath" $cssTarget "outputStyle" "compressed" "transpiler" "dartsass") }}
 {{- $fontFace     := replace .Site.Params.font.name " " "+" }}
 {{- $fontSizes    := delimit .Site.Params.font.sizes "," }}
 {{- $fontUrl      := printf "https://fonts.googleapis.com/css?family=%s:%s" $fontFace $fontSizes }}
