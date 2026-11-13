@@ -1,6 +1,11 @@
 {{- /* Project-level override of themes/clean-landing/layouts/partials/footer.html
        that adds the Linux Foundation copyright and trademark notice required
-       for CNCF project websites. */}}
+       for CNCF project websites.
+
+       Note: the theme's partial contains a stray extra </div> after the
+       columns block. That is not reproduced here — with content following
+       it (the notice below), the parser would close the footer and the
+       surrounding page wrapper early and break the whole page layout. */}}
 {{- $footer      := .Site.Params.footer }}
 {{- $logo        := index $footer "logo" }}
 {{- $quickLinks  := index $footer "quicklinks" }}
@@ -15,14 +20,13 @@
     </div>
     <div class="column is-half is-full-mobile">
       <div class="content has-text-right has-text-centered-mobile">
-          <p>
-            {{- range $socialMedia }}
-            <a class="" href="{{ .link }}">
-              <span class="icon"><i class="fa fa-{{ .icon }}"></i></span> {{humanize .name }}
-            </a>
-            {{- end }}
-          </p>
-        </div>
+        <p>
+          {{- range $socialMedia }}
+          <a class="" href="{{ .link }}">
+            <span class="icon"><i class="fa fa-{{ .icon }}"></i></span> {{humanize .name }}
+          </a>
+          {{- end }}
+        </p>
       </div>
     </div>
   </div>
